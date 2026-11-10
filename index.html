@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SZ Mantenimiento de PC | Tu compu, en buenas manos · Rosario</title>
+
+  <meta name="description" content="Taller de PC en Rosario. Armado gamer y de oficina, limpieza interna, pasta térmica, instalación de Windows y optimización. Diagnóstico bonificado si hacés la reparación. WhatsApp 341 258 0840." />
+  <meta name="keywords" content="SZ Mantenimiento, taller de pc rosario, reparacion de computadoras, armado pc gamer, pasta termica, rosario" />
+  <meta name="author" content="SZ Mantenimiento de PC" />
+  <meta name="theme-color" content="#1c1a17" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SZ Mantenimiento de PC | Rosario" />
+  <meta property="og:description" content="Tu compu, en buenas manos. Armado, limpieza y puesta a punto en Rosario." />
+  <meta property="og:image" content="./graficas/sello.jfif" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Favicon & Preload -->
+  <link rel="icon" type="image/png" href="./graficas/logo/logo_sz_transparente_crema.png" />
+  <link rel="preload" as="image" href="./graficas/limpieza_despues.jfif" />
+
+  <!-- Google Fonts: Anton (titulares de afiche), Oswald (etiquetas de taller), Barlow (cuerpo de imprenta) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos modulares: Afiche Retro -->
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="stylesheet" href="./css/hero.css" />
+  <link rel="stylesheet" href="./css/services.css" />
+  <link rel="stylesheet" href="./css/maintenance.css" />
+  <link rel="stylesheet" href="./css/assembly.css" />
+  <link rel="stylesheet" href="./css/contact.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/floating-wa.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+</head>
+<body>
+  <a class="skip-link" href="#servicios">Saltar al contenido</a>
+
+  <!-- Iconos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0Z"/></symbol>
+  </svg>
+
+  <main class="flyer-retro">
+    <!-- HEADER -->
+    <header class="retro-header" id="retroHeader">
+      <div class="retro-header-inner">
+        <a href="#inicio" class="retro-brand" aria-label="SZ Mantenimiento de PC, inicio" data-testid="link-home-brand">
+          <img src="./graficas/logo/logo_sz_transparente_crema.png" alt="SZ" width="70" height="48" />
+          <span><small>MANTENIMIENTO<br />DE PC</small></span>
+        </a>
+
+        <!-- Botón Hamburguesa Móvil -->
+        <button type="button" class="retro-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="retroNav" data-testid="button-menu">
+          <svg id="menuIconOpen" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="7" y2="7"></line>
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="17" y2="17"></line>
+          </svg>
+          <svg id="menuIconClose" hidden width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Navegación -->
+        <nav class="retro-nav" id="retroNav" aria-label="Navegación principal">
+          <a href="#servicios" class="nav-item" data-testid="link-nav-services">Servicios</a>
+          <a href="#mantenimiento" class="nav-item" data-testid="link-nav-maintenance">Mantenimiento</a>
+          <a href="#armado" class="nav-item" data-testid="link-nav-assembly">Armado</a>
+          <a href="#contacto" class="nav-item" data-testid="link-nav-contact">Contacto</a>
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Te%20escribo%20desde%20la%20p%C3%A1gina%20web." target="_blank" rel="noopener noreferrer" class="retro-nav-cta wa-cta" data-testid="link-whatsapp-header">
+            <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>
+            Hablemos
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- SECCIÓN HERO -->
+    <section class="retro-hero on-dark" id="inicio">
+      <div class="hero-paper">
+        <div class="hero-topline">
+          <span>Taller de PC en Rosario · Atención personalizada</span>
+          <span class="issue-mark">SZ / 01</span>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-copy">
+            <h1 class="display">Tu compu,<br /><span>en buenas</span><br />manos.</h1>
+            <div class="hero-stamp" aria-hidden="true">SERVICIO<br />DE CONFIANZA</div>
+            <div class="hero-subbanner">Reparación · Configuración · Armado</div>
+            <p class="hero-intro">Armado, limpieza y puesta a punto para que tu PC vuelva a estar a la altura de tus días.</p>
+
+            <div class="hero-actions" id="heroActions">
+              <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20mi%20computadora." target="_blank" rel="noopener noreferrer" class="retro-button red-button ribbon-style wa-cta" data-testid="link-whatsapp-hero">
+                <svg width="19" height="19" aria-hidden="true"><use href="#i-wa"/></svg>
+                Consultar por WhatsApp
+                <svg width="17" height="17" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <a class="retro-text-link" href="#servicios" data-testid="link-see-services">
+                Ver servicios
+                <svg width="15" height="15" aria-hidden="true"><use href="#i-down"/></svg>
+              </a>
+            </div>
+
+            <a class="hero-phone" href="https://wa.me/5493412580840" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp al 341 258 0840">
+              <span>Escribinos</span>
+              <b>341 258 0840</b>
+            </a>
+          </div>
+
+          <div class="hero-mascot-wrap">
+            <!-- Trazas de circuito estilo afiche SZ -->
+            <svg class="circuit-backdrop" viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="200" cy="200" r="182" stroke-dasharray="6 6" />
+              <path d="M30 280h55l35-35h40M310 95h45l25-25M280 330h50l35-35h25M45 120h40l30 30" />
+              <circle cx="30" cy="280" r="5" fill="currentColor" />
+              <circle cx="380" cy="70" r="5" fill="currentColor" />
+              <circle cx="390" cy="295" r="5" fill="currentColor" />
+              <circle cx="45" cy="120" r="5" fill="currentColor" />
+            </svg>
+            <div class="mascot-frame">
+              <img src="./graficas/sello.jfif" alt="Sello de SZ Mantenimiento de PC: la mascota, una computadora sonriente con destornillador" width="360" height="360" fetchpriority="high" />
+            </div>
+            <div class="mascot-ribbon" aria-hidden="true">¡TU EQUIPO<br />TIENE ARREGLO!</div>
+            <div class="mascot-side-note" aria-hidden="true">HECHO CON<br />CUIDADO<b>SZ</b></div>
+            <svg class="print-star star-one" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="print-star star-two" aria-hidden="true"><use href="#i-star"/></svg>
+          </div>
+        </div>
+
+        <div class="hero-footerline">
+          <span>Resultados reales. Proceso transparente.</span>
+          <a href="#servicios" data-testid="link-scroll-services">
+            Deslizá
+            <svg width="14" height="14" aria-hidden="true"><use href="#i-down"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN SERVICIOS -->
+    <section class="retro-services on-light" id="servicios" aria-labelledby="servicios-title">
+      <div class="services-heading">
+        <div>
+          <h2 class="display section-title" id="servicios-title">Manos a la PC.<br /><em>Soluciones claras.</em></h2>
+        </div>
+        <p>Contanos qué necesita tu equipo. Revisamos juntos el próximo paso, sin vueltas.</p>
+        <div class="services-stamp" aria-hidden="true">SIN VUELTAS</div>
+      </div>
+
+      <div class="service-sheet">
+        <div class="sheet-label">
+          <span class="tag-pill">Servicios para PC</span>
+          <span>Atención cercana · SZ</span>
+        </div>
+
+        <!-- Servicio 01 -->
+        <article class="retro-service" data-testid="card-service-01">
+          <div class="service-number" aria-hidden="true">01</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 11h4M8 9v4M15 12h.01M18 10h.01"/>
+              <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/>
+            </svg>
+          </div>
+          <div class="service-copy">
+            <span class="service-tag">ARMADO DE PC</span>
+            <h3 data-testid="text-service-title-01">Armado gamer y de oficina</h3>
+            <p>Un equipo pensado para lo que necesitás: juego, trabajo o uso diario.</p>
+          </div>
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Armado%20gamer%20y%20de%20oficina." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Armado gamer y de oficina" data-testid="link-whatsapp-service-01">
+            <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </article>
+
+        <!-- Servicio 02 -->
+        <article class="retro-service" data-testid="card-service-02">
+          <div class="service-number" aria-hidden="true">02</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+              <path d="M3 5.5 10.5 4.5v7H3zM13 4.2 21 3v8.5h-8zM3 12.5h7.5v7L3 18.5zM13 12.5h8V21l-8-1.2z"/>
+            </svg>
+          </div>
+          <div class="service-copy">
+            <span class="service-tag">INSTALACIÓN</span>
+            <h3 data-testid="text-service-title-02">Windows y programas</h3>
+            <p>Instalación y configuración de Windows, drivers y software.</p>
+          </div>
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Windows%20y%20programas." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Windows y programas" data-testid="link-whatsapp-service-02">
+            <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </article>
+
+        <!-- Servicio 03 -->
+        <article class="retro-service" data-testid="card-service-03">
+          <div class="service-number" aria-hidden="true">03</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z"/>
+              <path d="M12 12v.01"/>
+            </svg>
+          </div>
+          <div class="service-copy">
+            <span class="service-tag">MANTENIMIENTO</span>
+            <h3 data-testid="text-service-title-03">Limpieza interna + pasta térmica</h3>
+            <p>Limpieza de componentes y reemplazo de pasta térmica.</p>
+          </div>
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Limpieza%20interna%20y%20cambio%20de%20pasta%20t%C3%A9rmica." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Limpieza interna y pasta térmica" data-testid="link-whatsapp-service-03">
+            <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </article>
+
+        <!-- Servicio 04 -->
+        <article class="retro-service" data-testid="card-service-04">
+          <div class="service-number" aria-hidden="true">04</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 14 4-4"/>
+              <path d="M3.34 19a10 10 0 1 1 17.32 0"/>
+            </svg>
+          </div>
+          <div class="service-copy">
+            <span class="service-tag">PUESTA A PUNTO</span>
+            <h3 data-testid="text-service-title-04">Optimización del sistema</h3>
+            <p>Ajustes para que el sistema funcione de manera más fluida.</p>
+          </div>
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Optimizaci%C3%B3n%20del%20sistema." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Optimización del sistema" data-testid="link-whatsapp-service-04">
+            <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </article>
+
+        <!-- Servicio 05 -->
+        <article class="retro-service" data-testid="card-service-05">
+          <div class="service-number" aria-hidden="true">05</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="16" height="16" x="4" y="4" rx="2"></rect>
+              <rect width="6" height="6" x="9" y="9" rx="1"></rect>
+              <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"></path>
+            </svg>
+          </div>
+          <div class="service-copy">
+            <span class="service-tag">CONSULTA</span>
+            <h3 data-testid="text-service-title-05">Asesoramiento en componentes</h3>
+            <p>Orientación para elegir componentes compatibles con tu equipo.</p>
+          </div>
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20asesorarme%20sobre%20componentes%20y%20upgrades." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Asesoramiento en componentes" data-testid="link-whatsapp-service-05">
+            <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </article>
+
+        <div class="sheet-bottom">
+          <span>¿No sabés por dónde empezar?</span>
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20contarte%20qu%C3%A9%20le%20pasa%20a%20mi%20PC." target="_blank" rel="noopener noreferrer" class="inline-contact" data-testid="link-whatsapp-services">
+            Contanos qué le pasa a tu PC
+            <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN MANTENIMIENTO -->
+    <section class="retro-maintenance on-dark" id="mantenimiento" aria-labelledby="mantenimiento-title">
+      <div class="maintenance-layout">
+        <div class="maintenance-copy">
+          <h2 class="display section-title" id="mantenimiento-title">¿Tu PC está lenta<br />o hace <em>mucho ruido?</em></h2>
+          <p>El polvo y el calor pueden afectar el funcionamiento del equipo. Una limpieza interna y el cambio de pasta térmica son parte del mantenimiento.</p>
+
+          <ul class="maintenance-points">
+            <li><span class="point-check"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>Limpieza interna</li>
+            <li><span class="point-check"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>Reemplazo de pasta térmica</li>
+            <li><span class="point-check"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>Atención al ruido y la temperatura</li>
+          </ul>
+
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20mantenimiento%20y%20ruido%20en%20mi%20equipo." target="_blank" rel="noopener noreferrer" class="retro-button cream-button wa-cta" data-testid="link-whatsapp-maintenance">
+            <svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>
+            Consultar mantenimiento
+            <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+
+        <figure class="cleaning-poster">
+          <!-- Selector Antes / Después con botones redondeados -->
+          <div class="cleaning-view-toggle" role="group" aria-label="Ver el equipo antes o después de la limpieza">
+            <button type="button" class="cleaning-toggle-btn" data-view="before" aria-pressed="true">Antes (suciedad)</button>
+            <button type="button" class="cleaning-toggle-btn" data-view="after" aria-pressed="false">Después (limpio)</button>
+          </div>
+
+          <div class="cleaning-img-container is-dusty" id="cleaningContainer" role="region" aria-label="Foto interactiva de limpieza de PC">
+            <span class="dust-prompt" id="dustPrompt" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              Tocá para limpiar el polvo
+            </span>
+            <span class="clean-sparkle" id="cleanSparkle" aria-hidden="true">✦</span>
+            <img id="cleaningImg" src="./graficas/web/limpieza%20antes%20reemplazo.png" alt="Interior de una PC antes de la limpieza: polvo acumulado en gabinete, fuente y cables" width="941" height="1672" loading="lazy" decoding="async" />
+            <span id="cleaningBadge" class="cleaning-badge before-badge" aria-live="polite">Antes · polvo acumulado y riesgo térmico</span>
+          </div>
+
+          <figcaption id="cleaningFootNote">Estado inicial: flujo de aire tapado y temperaturas altas</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ARMADO -->
+    <section class="retro-assembly on-light" id="armado" aria-labelledby="armado-title">
+      <div class="assembly-poster">
+        <video id="assemblyVideo" src="./graficas/ensamble_pc_web.mp4" poster="./graficas/ensamble_final.webp" autoplay loop muted playsinline preload="metadata" width="1280" height="720" aria-label="Ilustración animada de armado de PC en mesa de taller SZ"></video>
+        <span class="assembly-sticker" aria-hidden="true">
+          <img src="./graficas/sello.jfif" alt="" width="96" height="96" loading="lazy" decoding="async" />
+        </span>
+        <span class="poster-corner" aria-hidden="true">ENSAMBLE SZ<br />ROSARIO</span>
+      </div>
+
+      <div class="assembly-copy">
+        <h2 class="display section-title" id="armado-title">Una PC armada<br /><em>para tu mundo.</em></h2>
+        <p>Gaming o trabajo: te ayudamos a pensar el armado y a elegir componentes que tengan sentido para el uso que le vas a dar.</p>
+
+        <ul class="build-tags">
+          <li>Presupuestos a tu alcance</li>
+          <li>Componentes compatibles</li>
+          <li>Gamer u oficina</li>
+        </ul>
+
+        <div class="build-note">
+          <span class="note-mark" aria-hidden="true">SZ</span>
+          <span>Primero entendemos<br />qué necesitás.</span>
+        </div>
+
+        <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20el%20armado%20de%20una%20PC." target="_blank" rel="noopener noreferrer" class="retro-button red-button ribbon-style wa-cta" data-testid="link-whatsapp-assembly">
+          <svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>
+          Cotizar un armado
+          <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="retro-contact" id="contacto" aria-labelledby="contacto-title">
+      <div class="contact-inner">
+        <div class="contact-topline">
+          <span>El próximo paso es simple</span>
+          <span class="contact-dash" aria-hidden="true"></span>
+        </div>
+
+        <div class="contact-main">
+          <div>
+            <h2 class="display" id="contacto-title">Contanos qué<br /><em>necesita tu PC.</em></h2>
+            <p>Escribinos y conversamos sobre tu equipo. Atendemos en Rosario.</p>
+          </div>
+
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20hacer%20una%20consulta%20sobre%20mi%20equipo." target="_blank" rel="noopener noreferrer" class="contact-button wa-cta" aria-label="Escribir por WhatsApp al 341 258 0840" data-testid="link-whatsapp-contact">
+            <span class="contact-icon" aria-hidden="true">
+              <svg width="24" height="24"><use href="#i-wa"/></svg>
+            </span>
+            <span class="contact-number">
+              <small>WHATSAPP</small>
+              <strong>341 258 0840</strong>
+            </span>
+            <svg class="contact-arrow" width="26" height="26" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+
+        <div class="contact-bottom">
+          <span>SZ Mantenimiento de PC</span>
+          <span>Reparar · Cuidar · Armar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="retro-footer">
+      <a href="#inicio" class="footer-brand" data-testid="link-home-footer">
+        <img src="./graficas/logo/logo_sz_transparente_negro.png" alt="SZ" width="58" height="40" loading="lazy" />
+        <span><small>MANTENIMIENTO<br />DE PC</small></span>
+      </a>
+      <span>Un taller para que tu PC siga andando.</span>
+      <a href="#inicio" class="back-top" data-testid="link-back-to-top">
+        VOLVER ARRIBA
+        <svg width="14" height="14" aria-hidden="true"><use href="#i-up"/></svg>
+      </a>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Te%20escribo%20desde%20la%20p%C3%A1gina%20web." target="_blank" rel="noopener noreferrer" class="floating-whatsapp is-hidden" id="floatingWa" aria-label="Escribinos por WhatsApp" data-testid="link-whatsapp-floating">
+      <svg width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg>
+      <span>Escribinos</span>
+    </a>
+  </main>
+
+  <!-- JavaScript modular: Afiche Retro -->
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

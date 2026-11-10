@@ -1,0 +1,16 @@
+/* ========================================================
+   ESTILOS PRINCIPALES — SZ MANTENIMIENTO DE PC
+   Arquitectura Modular: Afiche Retro
+   ======================================================== */
+
+@import "./variables.css";
+@import "./base.css";
+@import "./header.css";
+@import "./hero.css";
+@import "./services.css";
+@import "./maintenance.css";
+@import "./assembly.css";
+@import "./contact.css";
+@import "./footer.css";
+@import "./floating-wa.css";
+@import "./animations.css";

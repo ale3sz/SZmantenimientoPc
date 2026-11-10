@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SZ Mantenimiento de PC"
+description = "Sitio web para presentar los servicios de reparación, mantenimiento y optimización de computadoras de SZ, y facilitar consultas de nuevos clientes por WhatsApp."
+version = "1.0.0"
+id = "artifacts/sz-mantenimiento"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22158
+
+[services.development]
+run = "pnpm --filter @workspace/sz-mantenimiento run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/sz-mantenimiento", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/sz-mantenimiento/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22158"
+BASE_PATH = "/"

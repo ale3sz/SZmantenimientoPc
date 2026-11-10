@@ -1,0 +1,48 @@
+/* ========================================================
+   VARIABLES & DESIGN TOKENS — SZ MANTENIMIENTO DE PC
+   Paleta oficial estilo afiche retro / taller de imprenta
+   ======================================================== */
+:root {
+  --fr-paper: #e9dfc8;
+  --fr-paper-light: #f5ebd6;
+  --fr-cream-ink: #efe2c4;
+  --fr-ink: #1e1c18;
+  --fr-night: #191815;
+  --fr-night-2: #24221e;
+  --fr-slate: #364750;
+  --fr-red: #99372e;            /* Contraste AA >= 4.6:1 con crema */
+  --fr-red-bright: #e87266;     /* Contraste AA >= 4.7:1 sobre fondos oscuros */
+  --fr-red-deep: #7a2922;
+  --fr-muted: #524a3e;          /* Contraste AA >= 5.5:1 sobre papel */
+  --fr-muted-dark: #cfc2a6;     /* Contraste AA >= 8.5:1 sobre noche */
+  --fr-rule: #a89b80;
+
+  --font-display: "Anton", "Oswald", Impact, sans-serif;
+  --font-label: "Oswald", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", system-ui, -apple-system, sans-serif;
+
+  --header-h: 74px;
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 8px);
+  scrollbar-color: var(--fr-red) var(--fr-night);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fr-paper);
+  color: var(--fr-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--fr-red);
+  color: var(--fr-paper-light);
+}

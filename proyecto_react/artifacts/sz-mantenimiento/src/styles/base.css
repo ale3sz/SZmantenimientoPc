@@ -1,0 +1,90 @@
+/* ========================================================
+   BASE, TEXTURA Y ACCESIBILIDAD — SZ MANTENIMIENTO DE PC
+   ======================================================== */
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--fr-paper-light);
+  color: var(--fr-ink);
+  border: 2px solid var(--fr-ink);
+  border-radius: 999px;
+  font: 600 14px var(--font-label);
+  text-decoration: none;
+  transform: translateY(-200%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .2s var(--ease-out), opacity .2s var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.flyer-retro {
+  min-height: 100dvh;
+  overflow-x: clip;
+  color: var(--fr-ink);
+  background-color: var(--fr-paper);
+  position: relative;
+  isolation: isolate;
+}
+
+/* Textura de papel granulado analógico */
+.flyer-retro::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: .09;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+.flyer-retro *,
+.flyer-retro *::before,
+.flyer-retro *::after {
+  box-sizing: border-box;
+}
+
+.flyer-retro a {
+  color: inherit;
+}
+
+.flyer-retro img {
+  max-width: 100%;
+  display: block;
+}
+
+.flyer-retro svg {
+  flex-shrink: 0;
+}
+
+.flyer-retro section[id] {
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+.flyer-retro a:focus-visible,
+.flyer-retro button:focus-visible {
+  outline: 3px solid var(--fr-red-bright);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  line-height: .95;
+  text-wrap: balance;
+}

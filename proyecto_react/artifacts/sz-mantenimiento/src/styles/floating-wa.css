@@ -1,0 +1,52 @@
+/* ========================================================
+   WHATSAPP FLOTANTE — SZ MANTENIMIENTO DE PC
+   ======================================================== */
+
+.flyer-retro .floating-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 22px;
+  color: var(--fr-paper-light);
+  background: var(--fr-red);
+  border: 2px solid var(--fr-ink);
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--fr-ink);
+  text-decoration: none;
+  font: 600 15px var(--font-label);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: transform .25s var(--ease-out), box-shadow .15s var(--ease-out), background .15s, opacity .25s var(--ease-out);
+}
+
+.flyer-retro .floating-whatsapp:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--fr-ink);
+  background: var(--fr-red-deep);
+}
+
+.flyer-retro .floating-whatsapp:active {
+  transform: translate(4px, 4px) scale(0.98);
+  box-shadow: 0 0 0 var(--fr-ink);
+}
+
+.flyer-retro .floating-whatsapp.is-hidden {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+}
+
+/* Responsive Floating WA */
+@media (max-width: 480px) {
+  .flyer-retro .floating-whatsapp {
+    right: 14px;
+    padding: 14px;
+  }
+  .flyer-retro .floating-whatsapp span {
+    display: none;
+  }
+}

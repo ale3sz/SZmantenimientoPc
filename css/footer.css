@@ -1,0 +1,61 @@
+/* ========================================================
+   FOOTER — SZ MANTENIMIENTO DE PC
+   ======================================================== */
+
+.flyer-retro .retro-footer {
+  max-width: 1136px;
+  margin: auto;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--fr-muted);
+  font-size: 15px;
+}
+
+.flyer-retro .footer-brand {
+  color: var(--fr-ink);
+}
+
+.flyer-retro .footer-brand img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform .25s var(--ease-out);
+  transform-origin: center left;
+}
+
+.flyer-retro .footer-brand:hover img {
+  transform: translateX(3px) scale(1.04);
+}
+
+.flyer-retro .back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 10px;
+  color: var(--fr-muted);
+  text-decoration: none;
+  font: 600 13px var(--font-label);
+  letter-spacing: .12em;
+  transition: color .15s;
+}
+
+.flyer-retro .back-top:hover {
+  color: var(--fr-red);
+}
+
+/* Responsive Footer */
+@media (max-width: 480px) {
+  .flyer-retro .retro-footer {
+    padding: 22px 20px 90px;
+    flex-wrap: wrap;
+  }
+  .flyer-retro .retro-footer > span {
+    order: 3;
+    width: 100%;
+  }
+}

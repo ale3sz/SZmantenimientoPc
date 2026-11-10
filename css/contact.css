@@ -1,0 +1,184 @@
+/* ========================================================
+   CONTACTO — SZ MANTENIMIENTO DE PC
+   ======================================================== */
+
+.flyer-retro .retro-contact {
+  padding: 64px 28px 30px;
+  color: var(--fr-paper-light);
+  background-color: var(--fr-red);
+  background-image: radial-gradient(rgba(248,228,198,.16) .7px, transparent .8px);
+  background-size: 9px 9px;
+  position: relative;
+  overflow: hidden;
+}
+
+.flyer-retro .retro-contact::after {
+  content: "SZ";
+  position: absolute;
+  right: -.02em;
+  bottom: -.3em;
+  color: rgba(30, 12, 10, .18);
+  font: 400 clamp(220px, 32vw, 460px)/1 var(--font-display);
+  pointer-events: none;
+}
+
+.flyer-retro .contact-inner {
+  max-width: 1080px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.flyer-retro .contact-topline,
+.flyer-retro .contact-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #f9e6df;
+  font: 500 12px var(--font-label);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.flyer-retro .contact-dash {
+  flex: 1;
+  max-width: 68%;
+  height: 1px;
+  background: rgba(249,230,223,.55);
+}
+
+.flyer-retro .contact-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 42px 0 54px;
+}
+
+.flyer-retro .contact-main h2 {
+  margin: 0;
+  font-size: clamp(48px, 6.4vw, 86px);
+  color: var(--fr-paper-light);
+  text-shadow: 4px 4px 0 #4d1914;
+}
+
+.flyer-retro .contact-main h2 em {
+  color: #fff6e3;
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 6px;
+}
+
+.flyer-retro .contact-main p {
+  margin: 18px 0 0;
+  color: #fff0ea;
+  font-size: 18px;
+}
+
+.flyer-retro .contact-button {
+  min-width: 330px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px 14px 14px;
+  color: var(--fr-ink);
+  background: var(--fr-paper-light);
+  border: 3px solid var(--fr-ink);
+  border-radius: 999px;
+  box-shadow: 6px 6px 0 var(--fr-ink);
+  text-decoration: none;
+  transition: transform .15s var(--ease-out), box-shadow .15s var(--ease-out), background .15s;
+}
+
+.flyer-retro .contact-button:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 var(--fr-ink);
+  background: #fff9ec;
+}
+
+.flyer-retro .contact-button:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 var(--fr-ink);
+}
+
+.flyer-retro .contact-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  color: var(--fr-paper-light);
+  background: var(--fr-red);
+  border: 2px solid var(--fr-ink);
+  border-radius: 50%;
+}
+
+.flyer-retro .contact-number {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.flyer-retro .contact-number small {
+  color: var(--fr-muted);
+  font: 600 12px var(--font-label);
+  letter-spacing: .18em;
+}
+
+.flyer-retro .contact-number strong {
+  color: var(--fr-ink);
+  font: 400 30px/1 var(--font-display);
+  letter-spacing: .04em;
+}
+
+.flyer-retro .contact-arrow {
+  color: var(--fr-red);
+  transition: transform .2s var(--ease-out);
+}
+
+.flyer-retro .contact-button:hover .contact-arrow {
+  transform: translateX(4px);
+}
+
+.flyer-retro .contact-bottom {
+  padding: 18px 0 4px;
+  border-top: 1px solid rgba(249,230,223,.4);
+}
+
+/* Responsive Contacto */
+@media (max-width: 860px) {
+  .flyer-retro .contact-main {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 34px 0 44px;
+  }
+  .flyer-retro .contact-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .flyer-retro .retro-contact {
+    padding: 44px 18px 24px;
+  }
+  .flyer-retro .contact-topline,
+  .flyer-retro .contact-bottom {
+    font-size: 11px;
+    letter-spacing: .1em;
+  }
+  .flyer-retro .contact-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .flyer-retro .contact-button {
+    gap: 12px;
+    padding: 12px 18px 12px 12px;
+  }
+  .flyer-retro .contact-number strong {
+    font-size: 25px;
+  }
+}

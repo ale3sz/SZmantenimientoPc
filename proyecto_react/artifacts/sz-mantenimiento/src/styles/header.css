@@ -1,0 +1,206 @@
+/* ========================================================
+   HEADER & NAVEGACIÓN — SZ MANTENIMIENTO DE PC
+   ======================================================== */
+
+.flyer-retro .retro-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: var(--header-h);
+  background-color: var(--fr-night);
+  color: var(--fr-paper-light);
+  transition: background-color .3s var(--ease-out), box-shadow .3s var(--ease-out);
+}
+
+.flyer-retro .retro-header.is-scrolled {
+  background-color: rgba(25, 24, 21, .97);
+  box-shadow: 0 2px 0 rgba(233,223,200,.16), 0 10px 26px rgba(0,0,0,.32);
+}
+
+.flyer-retro .retro-header-inner {
+  height: 100%;
+  max-width: 1220px;
+  margin: auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgba(233,223,200,.22);
+}
+
+/* Marca oficial con logo transparente */
+.flyer-retro .retro-brand,
+.flyer-retro .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.flyer-retro .retro-brand img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform .25s var(--ease-out);
+  transform-origin: center left;
+}
+
+.flyer-retro .retro-brand:hover img {
+  transform: translateX(4px) scale(1.04);
+}
+
+.flyer-retro .retro-brand:active img {
+  transform: translateX(2px) scale(0.98);
+}
+
+.flyer-retro .retro-brand span,
+.flyer-retro .footer-brand span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.flyer-retro .retro-brand small,
+.flyer-retro .footer-brand small {
+  font: 600 12px/1.2 var(--font-label);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* Menú de navegación desktop */
+.flyer-retro .retro-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.flyer-retro .retro-nav > a:not(.retro-nav-cta) {
+  position: relative;
+  color: var(--fr-cream-ink);
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 500 13px var(--font-label);
+  letter-spacing: .1em;
+  padding: 6px 0;
+  transition: color .2s;
+}
+
+.flyer-retro .retro-nav > a:not(.retro-nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--fr-red-bright);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s var(--ease-out);
+}
+
+.flyer-retro .retro-nav > a:not(.retro-nav-cta):hover {
+  color: #fff;
+}
+
+.flyer-retro .retro-nav > a:not(.retro-nav-cta):hover::after {
+  transform: scaleX(1);
+}
+
+.flyer-retro .retro-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--fr-paper-light);
+  color: var(--fr-ink);
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 600 13px var(--font-label);
+  letter-spacing: .08em;
+  border: 2px solid var(--fr-ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--fr-red);
+  transition: transform .15s var(--ease-out), box-shadow .15s var(--ease-out), background .15s;
+}
+
+.flyer-retro .retro-nav-cta:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--fr-red);
+  background: #fff8e6;
+}
+
+.flyer-retro .retro-menu-toggle {
+  display: none;
+}
+
+/* Adaptación responsive del Header */
+@media (max-width: 860px) {
+  .flyer-retro .retro-header-inner {
+    padding: 0 18px;
+  }
+
+  .flyer-retro .retro-menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--fr-paper-light);
+    border: 1.5px solid rgba(233,223,200,.5);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .flyer-retro .retro-nav {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    padding: 8px 20px 22px;
+    background: var(--fr-night);
+    border-bottom: 3px solid var(--fr-red);
+    box-shadow: 0 16px 30px rgba(0,0,0,.35);
+  }
+
+  .flyer-retro .retro-nav.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    animation: menu-in .25s var(--ease-out);
+  }
+
+  .flyer-retro .retro-nav > a:not(.retro-nav-cta) {
+    padding: 16px 0;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(233,223,200,.15);
+  }
+
+  .flyer-retro .retro-nav > a:not(.retro-nav-cta)::after {
+    display: none;
+  }
+
+  .flyer-retro .retro-nav-cta {
+    justify-content: center;
+    margin-top: 18px;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flyer-retro .retro-brand img {
+    height: 38px;
+    width: auto;
+  }
+
+  .flyer-retro .retro-brand small {
+    font-size: 11px;
+    letter-spacing: .12em;
+  }
+}

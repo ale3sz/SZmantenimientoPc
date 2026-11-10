@@ -1,0 +1,128 @@
+/* ========================================================
+   KEYFRAMES & MOTION PREFERENCES — SZ MANTENIMIENTO DE PC
+   Animaciones estilo imprenta física / cartoon retro
+   ======================================================== */
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stamp-impact {
+  0% {
+    opacity: 0;
+    transform: scale(1.4) rotate(-8deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.94) rotate(11deg);
+  }
+  82% {
+    transform: scale(1.03) rotate(8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(8deg);
+  }
+}
+
+@keyframes stamp-services {
+  0% {
+    opacity: 0;
+    transform: scale(1.4) rotate(-6deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.94) rotate(8.5deg);
+  }
+  82% {
+    transform: scale(1.03) rotate(6.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(7deg);
+  }
+}
+
+@keyframes flyer-bob {
+  0%, 100% {
+    transform: translateY(0) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(1deg);
+  }
+}
+
+@keyframes ribbon-sway {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(4px) rotate(-3.5deg);
+  }
+}
+
+@keyframes star-sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.35) rotate(45deg);
+    opacity: 1;
+    color: #ffebaa;
+  }
+}
+
+@keyframes clean-switch {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(0.985) rotate(-0.5deg);
+  }
+  65% {
+    transform: scale(1.01) rotate(0.4deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes sticker-float {
+  0%, 100% {
+    transform: rotate(8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(5deg) translateY(-5px);
+  }
+}
+
+@keyframes nudge-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+/* Reducción de movimiento para usuarios con sensibilidad vestibular */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .flyer-retro *,
+  .flyer-retro *::before,
+  .flyer-retro *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

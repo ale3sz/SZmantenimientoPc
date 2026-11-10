@@ -1,0 +1,16 @@
+/* ========================================================
+   ESTILOS PRINCIPALES RETRO — SZ MANTENIMIENTO DE PC
+   Arquitectura modular importada para React / Vite
+   ======================================================== */
+
+@import "./styles/variables.css";
+@import "./styles/base.css";
+@import "./styles/header.css";
+@import "./styles/hero.css";
+@import "./styles/services.css";
+@import "./styles/maintenance.css";
+@import "./styles/assembly.css";
+@import "./styles/contact.css";
+@import "./styles/footer.css";
+@import "./styles/floating-wa.css";
+@import "./styles/animations.css";
