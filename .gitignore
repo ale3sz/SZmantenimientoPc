@@ -10,7 +10,9 @@ node_modules/
 herramientas/
 Driver_WiFi_RTL8188FTV/
 Driver_WiFi_RTL8188FTV.7z
+# Screenshots temporales
 shots/
+screenshot_*.png
 
 # Logs y temporales
 *.log

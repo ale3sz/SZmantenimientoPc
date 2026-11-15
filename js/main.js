@@ -482,12 +482,12 @@
         }
       });
 
-      var closeBtn = backdrop.querySelector('.retro-modal-close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function () {
+      var closeButtons = backdrop.querySelectorAll('.retro-modal-close, .retro-modal-close-icon, [data-modal-close]');
+      closeButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
           closeModal(backdrop);
         });
-      }
+      });
     });
 
     document.addEventListener('keydown', function (e) {
@@ -636,5 +636,6 @@
     initLegalModals();
     initAnalyticsAndTracking();
     initContactForm();
+    if (window.initMascot) window.initMascot(reduceMotion);
   });
 })();

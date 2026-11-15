@@ -185,24 +185,28 @@
   color: var(--fr-gold);
 }
 
-.retro-modal-close {
+.retro-modal-close,
+.retro-modal-close-icon {
   background: var(--fr-red);
   color: var(--fr-paper-light);
   border: 2px solid var(--fr-paper-light);
   border-radius: var(--retro-radius-badge);
   width: 44px;
   height: 44px;
+  min-width: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   box-shadow: 2px 2px 0 var(--fr-ink);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
+  line-height: 1;
   transition: transform 0.15s, background-color 0.15s;
 }
 
-.retro-modal-close:hover {
+.retro-modal-close:hover,
+.retro-modal-close-icon:hover {
   background: var(--fr-red-bright);
 }
 
@@ -300,11 +304,43 @@
 
 .retro-modal-footer {
   padding: 16px 24px;
-  background: #dfd4bc;
-  border-top: 2px solid var(--fr-rule);
+  background: var(--fr-night);
+  border-top: 3px solid var(--fr-ink);
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+}
+
+.retro-modal-btn-dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fr-red);
+  color: var(--fr-paper-light);
+  font: 700 14px var(--font-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  min-height: 44px;
+  width: auto;
+  border: 2px solid var(--fr-paper-light);
+  border-radius: var(--retro-radius-badge);
+  box-shadow: 3px 3px 0 var(--fr-ink);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.retro-modal-btn-dismiss:hover {
+  background: var(--fr-red-bright);
+  transform: translateY(-1px);
+}
+
+.retro-modal-btn-dismiss:active {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0 var(--fr-ink);
 }
 
 /* 3. ENLACES LEGALES EN EL FOOTER */
