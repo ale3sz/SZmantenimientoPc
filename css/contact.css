@@ -56,6 +56,31 @@
   padding: 42px 0 54px;
 }
 
+.flyer-retro .contact-bonified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  background: var(--fr-night);
+  color: var(--fr-gold);
+  border: 2px solid var(--fr-paper-light);
+  border-radius: var(--retro-radius-badge);
+  font: 600 12px var(--font-label);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 var(--fr-ink);
+}
+
+.flyer-retro .contact-bonified-badge strong {
+  color: #fff;
+}
+
+.flyer-retro .contact-bonified-badge .badge-star {
+  color: var(--fr-gold);
+  animation: spark-flicker 2s ease-in-out infinite;
+}
+
 .flyer-retro .contact-main h2 {
   margin: 0;
   font-size: clamp(48px, 6.4vw, 86px);
@@ -86,10 +111,10 @@
   color: var(--fr-ink);
   background: var(--fr-paper-light);
   border: 3px solid var(--fr-ink);
-  border-radius: 999px;
+  border-radius: 14px;
   box-shadow: 6px 6px 0 var(--fr-ink);
   text-decoration: none;
-  transition: transform .15s var(--ease-out), box-shadow .15s var(--ease-out), background .15s;
+  transition: transform var(--snap), box-shadow var(--snap), background var(--snap);
 }
 
 .flyer-retro .contact-button:hover {

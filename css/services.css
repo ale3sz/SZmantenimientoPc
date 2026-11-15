@@ -59,7 +59,7 @@
   color: var(--fr-paper-light);
   background: var(--fr-red);
   border: 2px solid var(--fr-ink);
-  border-radius: 999px;
+  border-radius: var(--retro-radius-badge);
   box-shadow: 3px 3px 0 var(--fr-ink);
   text-align: center;
   font: 400 16px/1.05 var(--font-display);
@@ -73,10 +73,11 @@
 }
 
 .flyer-retro .service-sheet {
-  padding: 18px 26px 0;
-  background: #f2e8d2;
-  border-top: 3px solid var(--fr-ink);
-  border-bottom: 3px solid var(--fr-ink);
+  padding: 24px 28px 0;
+  background: #f4ecdc;
+  border: 3px solid var(--fr-ink);
+  border-radius: var(--retro-radius-poster);
+  box-shadow: 6px 6px 0 var(--fr-ink);
 }
 
 .flyer-retro .sheet-label,
@@ -173,8 +174,10 @@
 }
 
 .flyer-retro .service-arrow {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   display: grid;
   place-items: center;
   color: var(--fr-paper-light);
@@ -183,7 +186,7 @@
   border-radius: 50%;
   box-shadow: 2px 2px 0 var(--fr-ink);
   text-decoration: none;
-  transition: transform .18s var(--ease-out), box-shadow .18s var(--ease-out), background .18s;
+  transition: transform var(--snap), box-shadow var(--snap), background var(--snap);
 }
 
 .flyer-retro .service-arrow::before {
@@ -196,6 +199,12 @@
   transform: translate(2px, 0);
   box-shadow: 1px 1px 0 var(--fr-ink);
   background: var(--fr-ink);
+}
+
+.flyer-retro .retro-service:active .service-arrow,
+.flyer-retro .service-arrow:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--fr-ink);
 }
 
 .flyer-retro .sheet-bottom {
@@ -275,8 +284,10 @@
     font-size: 15px;
   }
   .flyer-retro .service-arrow {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
   }
   .flyer-retro .sheet-bottom {
     align-items: flex-start;

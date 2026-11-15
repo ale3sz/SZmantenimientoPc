@@ -1,0 +1,67 @@
+# ========================================================
+# SZ MANTENIMIENTO DE PC — CONFIGURACIÓN DE PRODUCCIÓN
+# Apache / LiteSpeed (.htaccess)
+# ========================================================
+
+# 1. FORZAR HTTPS Y REDIRECCIÓN 301
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redireccionar HTTP a HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 2. PÁGINA 404 PERSONALIZADA
+ErrorDocument 404 /404.html
+
+# 3. CABECERAS DE SEGURIDAD (SECURITY HEADERS)
+<IfModule mod_headers.c>
+  # HSTS (HTTP Strict Transport Security) - 1 año con subdominios
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Prevención de sniffing de MIME
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Protección contra Clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Política de Referrer
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Política de permisos restrictiva (sin acceso innecesario a sensores)
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # Content Security Policy equilibrada para fuentes externas de Google y WhatsApp
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; frame-ancestors 'self';"
+</IfModule>
+
+# 4. COMPRESIÓN GZIP / DEFLATE
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# 5. CACHÉ DE RECURSOS ESTÁTICOS
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML: no cache o corto para reflejar cambios
+  ExpiresByType text/html "access plus 1 hour"
+
+  # CSS y JavaScript: 1 año con versionado o hash
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+
+  # Imágenes y multimedia: 1 año
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+
+  # Fuentes: 1 año
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

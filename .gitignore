@@ -2,10 +2,15 @@
 node_modules/
 .pnpm-store/
 
-# Archivos pesados / instaladores
+# Archivos pesados / instaladores / drivers
 *.zip
+*.7z
+*.rar
 *.exe
 herramientas/
+Driver_WiFi_RTL8188FTV/
+Driver_WiFi_RTL8188FTV.7z
+shots/
 
 # Logs y temporales
 *.log

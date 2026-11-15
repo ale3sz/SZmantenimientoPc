@@ -1,21 +1,35 @@
 /* ========================================================
    VARIABLES & DESIGN TOKENS — SZ MANTENIMIENTO DE PC
-   Paleta oficial estilo afiche retro / taller de imprenta
+   Paleta oficial y sistema de estilo afiche de animación 1930s (Rubber Hose)
    ======================================================== */
 :root {
   --fr-paper: #e9dfc8;
   --fr-paper-light: #f5ebd6;
   --fr-cream-ink: #efe2c4;
-  --fr-ink: #1e1c18;
-  --fr-night: #191815;
-  --fr-night-2: #24221e;
-  --fr-slate: #364750;
+  --fr-ink: #191815;
+  --fr-night: #141311;
+  --fr-night-2: #1e1c18;
+  --fr-slate: #2d3b42;
   --fr-red: #99372e;            /* Contraste AA >= 4.6:1 con crema */
   --fr-red-bright: #e87266;     /* Contraste AA >= 4.7:1 sobre fondos oscuros */
-  --fr-red-deep: #7a2922;
+  --fr-red-deep: #68211b;
+  --fr-gold: #f4d06f;           /* Destellos ✦ de caricatura retro */
+  --fr-teal: #5aa49e;           /* Tinta cian retro de componentes */
   --fr-muted: #524a3e;          /* Contraste AA >= 5.5:1 sobre papel */
   --fr-muted-dark: #cfc2a6;     /* Contraste AA >= 8.5:1 sobre noche */
   --fr-rule: #a89b80;
+
+  /* Sistema de sombras duras entintadas a 45° */
+  --retro-shadow-xs: 2px 2px 0 var(--fr-ink);
+  --retro-shadow-sm: 3px 3px 0 var(--fr-ink);
+  --retro-shadow-md: 4px 4px 0 var(--fr-ink);
+  --retro-shadow-lg: 8px 8px 0 var(--fr-ink);
+  --retro-shadow-cream: 3px 3px 0 var(--fr-cream-ink);
+
+  /* Marcos de afiche estilo años 30 */
+  --retro-radius-poster: 22px;
+  --retro-radius-badge: 6px;
+  --retro-radius-sm: 4px;
 
   --font-display: "Anton", "Oswald", Impact, sans-serif;
   --font-label: "Oswald", "Arial Narrow", sans-serif;
@@ -23,6 +37,7 @@
 
   --header-h: 74px;
   --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --snap: 90ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 html {

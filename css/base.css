@@ -77,7 +77,6 @@
 .flyer-retro button:focus-visible {
   outline: 3px solid var(--fr-red-bright);
   outline-offset: 3px;
-  border-radius: 999px;
 }
 
 .display {

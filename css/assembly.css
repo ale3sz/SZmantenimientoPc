@@ -26,9 +26,9 @@
   object-fit: cover;
   display: block;
   background: var(--fr-night);
-  border-radius: 16px;
+  border-radius: var(--retro-radius-poster);
   border: 3px solid var(--fr-ink);
-  box-shadow: 12px 13px 0 #cbbd9f;
+  box-shadow: 8px 8px 0 var(--fr-ink);
   transform: rotate(-1.5deg);
 }
 
@@ -43,7 +43,7 @@
   background: var(--fr-night);
   border: 3px solid var(--fr-paper);
   border-radius: 50%;
-  box-shadow: 4px 5px 0 rgba(34,30,23,.28);
+  box-shadow: 4px 4px 0 var(--fr-ink);
   transform: rotate(8deg);
   transform-origin: center center;
   animation: sticker-float 6s ease-in-out infinite;
@@ -65,7 +65,7 @@
   background: var(--fr-red);
   color: var(--fr-paper-light);
   border: 2px solid var(--fr-ink);
-  border-radius: 6px;
+  border-radius: var(--retro-radius-badge);
   font: 400 16px/1.05 var(--font-display);
   letter-spacing: .05em;
   transform: rotate(-5deg);
@@ -92,8 +92,9 @@
 .flyer-retro .build-tags li {
   padding: 7px 14px;
   border: 2px solid var(--fr-red);
-  border-radius: 999px;
+  border-radius: var(--retro-radius-badge);
   color: var(--fr-red);
+  background: rgba(153, 55, 46, .06);
   font: 600 13px var(--font-label);
   letter-spacing: .08em;
   text-transform: uppercase;

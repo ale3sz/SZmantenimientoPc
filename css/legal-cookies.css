@@ -1,0 +1,507 @@
+/* ========================================================
+   LEGAL, COOKIES & PRIVACIDAD — SZ MANTENIMIENTO DE PC
+   Componentes accesibles conformes a RGPD y Ley 25.326
+   ======================================================== */
+
+/* 1. BANNER DE COOKIES */
+.retro-cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  max-width: 580px;
+  margin: 0 auto;
+  background: var(--fr-night);
+  color: var(--fr-paper-light);
+  border: 3px solid var(--fr-red);
+  border-radius: var(--retro-radius-poster);
+  padding: 20px 24px;
+  box-shadow: 6px 6px 0 var(--fr-ink), 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out), visibility 0.3s;
+}
+
+.retro-cookie-banner[hidden] {
+  display: none !important;
+}
+
+.retro-cookie-banner.is-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.cookie-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cookie-badge {
+  font: 700 11px var(--font-label);
+  letter-spacing: 0.12em;
+  background: var(--fr-gold);
+  color: var(--fr-night);
+  padding: 3px 8px;
+  border-radius: var(--retro-radius-badge);
+  text-transform: uppercase;
+}
+
+.cookie-title {
+  font: 700 16px var(--font-label);
+  color: var(--fr-paper-light);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cookie-desc {
+  font: 400 14px/1.5 var(--font-body);
+  color: var(--fr-muted-dark);
+  margin: 0;
+}
+
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-btn {
+  font: 700 13px var(--font-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  min-height: 44px;
+  border-radius: var(--retro-radius-badge);
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.15s, border-color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.cookie-btn:active {
+  transform: translateY(2px);
+}
+
+.cookie-btn-accept {
+  background: var(--fr-red);
+  color: var(--fr-paper-light);
+  border: 2px solid var(--fr-paper-light);
+  box-shadow: 2px 2px 0 var(--fr-ink);
+}
+
+.cookie-btn-accept:hover {
+  background: var(--fr-red-bright);
+}
+
+.cookie-btn-reject {
+  background: transparent;
+  color: var(--fr-paper-light);
+  border: 1px solid var(--fr-rule);
+}
+
+.cookie-btn-reject:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--fr-paper-light);
+}
+
+.cookie-btn-config {
+  background: transparent;
+  color: var(--fr-gold);
+  border: none;
+  text-decoration: underline;
+  padding: 8px 10px;
+}
+
+.cookie-btn-config:hover {
+  color: #fff;
+}
+
+/* 2. MODALES LEGALES Y DE PRIVACIDAD */
+.retro-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 19, 17, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s var(--ease-out), visibility 0.25s;
+}
+
+.retro-modal-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.retro-modal {
+  background: var(--fr-paper);
+  color: var(--fr-ink);
+  border: 3px solid var(--fr-ink);
+  border-radius: var(--retro-radius-poster);
+  box-shadow: 8px 8px 0 var(--fr-ink);
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.96);
+  transition: transform 0.25s var(--ease-out);
+}
+
+.retro-modal-backdrop.is-active .retro-modal {
+  transform: scale(1);
+}
+
+.retro-modal-header {
+  padding: 20px 24px;
+  background: var(--fr-night);
+  color: var(--fr-paper-light);
+  border-bottom: 3px solid var(--fr-ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.retro-modal-title {
+  margin: 0;
+  font: 900 22px var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fr-gold);
+}
+
+.retro-modal-close {
+  background: var(--fr-red);
+  color: var(--fr-paper-light);
+  border: 2px solid var(--fr-paper-light);
+  border-radius: var(--retro-radius-badge);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--fr-ink);
+  font-size: 18px;
+  font-weight: 700;
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.retro-modal-close:hover {
+  background: var(--fr-red-bright);
+}
+
+.retro-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  font: 400 15px/1.6 var(--font-body);
+  color: var(--fr-ink);
+}
+
+.retro-modal-body h4 {
+  font: 700 16px var(--font-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fr-red-deep);
+  margin: 20px 0 6px;
+}
+
+.retro-modal-body h4:first-child {
+  margin-top: 0;
+}
+
+.retro-modal-body p, .retro-modal-body ul {
+  margin: 0 0 14px;
+}
+
+.retro-modal-body ul {
+  padding-left: 20px;
+}
+
+.retro-modal-body li {
+  margin-bottom: 6px;
+}
+
+.legal-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 20px;
+  font-size: 14px;
+}
+
+.legal-data-table th, .legal-data-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--fr-rule);
+  text-align: left;
+}
+
+.legal-data-table th {
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+  color: var(--fr-ink);
+  width: 32%;
+}
+
+/* Configuración de cookies dentro del modal */
+.cookie-option-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--fr-rule);
+  border-radius: var(--retro-radius-sm);
+  margin-bottom: 12px;
+}
+
+.cookie-option-info h5 {
+  margin: 0 0 4px;
+  font: 700 15px var(--font-label);
+  text-transform: uppercase;
+}
+
+.cookie-option-info p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--fr-muted);
+}
+
+.cookie-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.cookie-toggle input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--fr-red);
+  cursor: pointer;
+}
+
+.retro-modal-footer {
+  padding: 16px 24px;
+  background: #dfd4bc;
+  border-top: 2px solid var(--fr-rule);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* 3. ENLACES LEGALES EN EL FOOTER */
+.footer-legal-bar {
+  max-width: 1136px;
+  margin: 0 auto;
+  padding: 14px 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  border-top: 1px dashed var(--fr-rule);
+  font: 500 13px var(--font-label);
+  color: var(--fr-muted);
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-legal-links a,
+.footer-legal-links button {
+  background: none;
+  border: none;
+  padding: 6px 4px;
+  min-height: 44px;
+  color: var(--fr-muted);
+  font: 600 13px var(--font-label);
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.footer-legal-links a:hover,
+.footer-legal-links button:hover {
+  color: var(--fr-red);
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 8px;
+  color: var(--fr-muted);
+  text-decoration: none;
+  font: 600 13px var(--font-label);
+  letter-spacing: 0.06em;
+  transition: color 0.15s;
+}
+
+.footer-social-links a:hover {
+  color: var(--fr-red);
+}
+
+/* 4. FORMULARIO DE CONSULTA RÁPIDA (CON HONEYPOT) */
+.contact-form-wrap {
+  margin-top: 32px;
+  background: var(--fr-night);
+  border: 2px solid var(--fr-paper-light);
+  border-radius: var(--retro-radius-poster);
+  padding: 28px;
+  box-shadow: 4px 4px 0 var(--fr-ink);
+  color: var(--fr-paper-light);
+}
+
+.contact-form-title {
+  margin: 0 0 6px;
+  font: 700 20px var(--font-label);
+  text-transform: uppercase;
+  color: var(--fr-gold);
+  letter-spacing: 0.06em;
+}
+
+.contact-form-subtitle {
+  margin: 0 0 20px;
+  font: 400 14px var(--font-body);
+  color: var(--fr-muted-dark);
+}
+
+.retro-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font: 600 13px var(--font-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fr-paper-light);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--fr-night-2);
+  color: var(--fr-paper-light);
+  border: 1.5px solid var(--fr-rule);
+  border-radius: var(--retro-radius-sm);
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 16px; /* Evita zoom automático en iOS Safari */
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--fr-gold);
+  box-shadow: 0 0 0 3px rgba(244, 208, 111, 0.25);
+}
+
+/* Campo trampa Honeypot para protección contra spam */
+.sr-only-honeypot {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.form-submit-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.form-feedback {
+  font: 500 14px var(--font-body);
+  display: none;
+}
+
+.form-feedback.is-error {
+  display: block;
+  color: #ff9b91;
+}
+
+.form-feedback.is-success {
+  display: block;
+  color: #72e89f;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .retro-cookie-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 16px;
+  }
+  .cookie-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cookie-btn {
+    width: 100%;
+  }
+  .retro-form {
+    grid-template-columns: 1fr;
+  }
+  .footer-legal-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

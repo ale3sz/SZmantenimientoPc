@@ -1,10 +1,19 @@
 /**
  * SZ MANTENIMIENTO DE PC — SCRIPT PRINCIPAL
- * Orquestador modular de interactividad y animaciones retro
+ * Orquestador modular de interactividad, animaciones retro, privacidad y analítica
  */
 
 (function () {
   'use strict';
+
+  /* ==========================================================
+     CONFIGURACIÓN DE ANALÍTICA Y PRIVACIDAD
+     ========================================================== */
+  var ANALYTICS_CONFIG = {
+    // Reemplaza con tu Measurement ID de Google Analytics 4 si deseas activarlo
+    gaMeasurementId: 'G-SZPCROSAR1',
+    storageKey: 'sz_cookie_consent_v1'
+  };
 
   /* ==========================================================
      1. CABECERA Y MENÚ MÓVIL
@@ -104,20 +113,20 @@
 
     var currentView = 'before';
 
-    // Precarga de imagen limpia en memoria
+    // Precarga de imagen limpia optimizada en WebP
     var preloadAfter = new Image();
-    preloadAfter.src = './graficas/limpieza_despues.jfif';
+    preloadAfter.src = './graficas/limpieza_despues.webp';
 
     var views = {
       before: {
-        src: './graficas/web/limpieza%20antes%20reemplazo.png',
+        src: './graficas/limpieza_antes.webp',
         alt: 'Interior de una PC antes de la limpieza: polvo acumulado en gabinete, fuente y cables',
         badge: 'Antes · polvo acumulado y riesgo térmico',
         badgeClass: 'before-badge',
         note: 'Estado inicial: flujo de aire tapado y temperaturas altas'
       },
       after: {
-        src: './graficas/limpieza_despues.jfif',
+        src: './graficas/limpieza_despues.webp',
         alt: 'La misma PC después de la limpieza: gabinete y componentes sin polvo',
         badge: 'Después · pasta térmica nueva y coolers limpios',
         badgeClass: 'after-badge',
@@ -135,7 +144,6 @@
       var colors = ['#f5ebd6', '#e9dfc8', '#cfc2a6', '#dcd0b8', '#a89b80', '#8a7b68', '#4a443a'];
       var particleCount = 28;
 
-      // 1. Partículas de polvo individuales
       for (var i = 0; i < particleCount; i++) {
         var p = document.createElement('span');
         p.className = 'dust-mote';
@@ -179,7 +187,6 @@
         }
       }
 
-      // 2. Mini nubecitas de polvo retro
       for (var j = 0; j < 5; j++) {
         var puff = document.createElement('span');
         puff.className = 'dust-puff';
@@ -268,7 +275,6 @@
       }
     }
 
-    // Clic en la imagen llena de polvo para limpiarla al instante
     if (cleaningContainer) {
       cleaningContainer.addEventListener('click', function (e) {
         if (currentView === 'before') {
@@ -354,7 +360,269 @@
   }
 
   /* ==========================================================
-     INICIALIZACIÓN
+     6. GESTIÓN DE CONSENTIMIENTO DE COOKIES & PRIVACIDAD
+     ========================================================== */
+  function initCookieConsent() {
+    var banner = document.getElementById('cookieBanner');
+    var btnAccept = document.getElementById('cookieAcceptBtn');
+    var btnReject = document.getElementById('cookieRejectBtn');
+    var btnConfig = document.getElementById('cookieConfigBtn');
+    var configModal = document.getElementById('cookieConfigModal');
+    var saveConfigBtn = document.getElementById('saveCookieConfigBtn');
+    var chkAnalytics = document.getElementById('cookieChkAnalytics');
+    var openCookieLinks = document.querySelectorAll('[data-open-cookies]');
+
+    var savedConsent = null;
+    try {
+      savedConsent = localStorage.getItem(ANALYTICS_CONFIG.storageKey);
+    } catch (e) {
+      console.warn('localStorage inaccesible');
+    }
+
+    function applyConsent(consentLevel) {
+      try {
+        localStorage.setItem(ANALYTICS_CONFIG.storageKey, consentLevel);
+      } catch (e) {}
+
+      if (banner) {
+        banner.classList.add('is-hidden');
+        setTimeout(function () {
+          banner.hidden = true;
+        }, 300);
+      }
+
+      if (consentLevel === 'all' || consentLevel === 'analytics') {
+        loadAnalytics();
+      }
+    }
+
+    if (!savedConsent) {
+      if (banner) {
+        banner.hidden = false;
+        banner.classList.remove('is-hidden');
+      }
+    } else if (savedConsent === 'all' || savedConsent === 'analytics') {
+      loadAnalytics();
+    }
+
+    if (btnAccept) {
+      btnAccept.addEventListener('click', function () {
+        applyConsent('all');
+        trackEvent('cookie_consent', { status: 'accepted_all' });
+      });
+    }
+
+    if (btnReject) {
+      btnReject.addEventListener('click', function () {
+        applyConsent('essential');
+        trackEvent('cookie_consent', { status: 'rejected_non_essential' });
+      });
+    }
+
+    if (btnConfig) {
+      btnConfig.addEventListener('click', function () {
+        openModal(configModal);
+      });
+    }
+
+    openCookieLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal(configModal);
+      });
+    });
+
+    if (saveConfigBtn && chkAnalytics) {
+      saveConfigBtn.addEventListener('click', function () {
+        var choice = chkAnalytics.checked ? 'analytics' : 'essential';
+        applyConsent(choice);
+        closeModal(configModal);
+        trackEvent('cookie_consent', { status: 'custom_' + choice });
+      });
+    }
+  }
+
+  /* ==========================================================
+     7. MODALES LEGALES ACCESIBLES (AVISO LEGAL & PRIVACIDAD)
+     ========================================================== */
+  function openModal(modalEl) {
+    if (!modalEl) return;
+    modalEl.classList.add('is-active');
+    modalEl.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    var closeBtn = modalEl.querySelector('.retro-modal-close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal(modalEl) {
+    if (!modalEl) return;
+    modalEl.classList.remove('is-active');
+    modalEl.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function initLegalModals() {
+    var modalTriggers = document.querySelectorAll('[data-modal-target]');
+    var backdrops = document.querySelectorAll('.retro-modal-backdrop');
+
+    modalTriggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        var targetId = trigger.getAttribute('data-modal-target');
+        var modal = document.getElementById(targetId);
+        if (modal) openModal(modal);
+      });
+    });
+
+    backdrops.forEach(function (backdrop) {
+      backdrop.addEventListener('click', function (e) {
+        if (e.target === backdrop) {
+          closeModal(backdrop);
+        }
+      });
+
+      var closeBtn = backdrop.querySelector('.retro-modal-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          closeModal(backdrop);
+        });
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        backdrops.forEach(function (backdrop) {
+          if (backdrop.classList.contains('is-active')) {
+            closeModal(backdrop);
+          }
+        });
+      }
+    });
+  }
+
+  /* ==========================================================
+     8. ANALÍTICA Y MEDICIÓN DE CONVERSIÓN
+     ========================================================== */
+  var analyticsLoaded = false;
+
+  function loadAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+
+    // Inicialización dinámica y respetuosa de Google Analytics 4
+    if (ANALYTICS_CONFIG.gaMeasurementId && !window.gtag) {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ANALYTICS_CONFIG.gaMeasurementId;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', ANALYTICS_CONFIG.gaMeasurementId, {
+        anonymize_ip: true,
+        cookie_flags: 'SameSite=None;Secure'
+      });
+    }
+  }
+
+  function trackEvent(eventName, params) {
+    try {
+      if (window.gtag) {
+        window.gtag('event', eventName, params || {});
+      }
+      if (window.SZ_DEBUG) {
+        console.log('[SZ Analytics Event]', eventName, params);
+      }
+    } catch (e) {}
+  }
+
+  function initAnalyticsAndTracking() {
+    // Rastrear todos los clics a WhatsApp categorizados por sección
+    var waButtons = document.querySelectorAll('.wa-cta, a[href*="wa.me"]');
+    waButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var testId = btn.getAttribute('data-testid') || 'unknown';
+        var label = btn.textContent.trim().replace(/\s+/g, ' ');
+        trackEvent('whatsapp_click', {
+          cta_id: testId,
+          cta_label: label,
+          page_location: window.location.href
+        });
+      });
+    });
+  }
+
+  /* ==========================================================
+     9. FORMULARIO DE CONSULTA RÁPIDA (CON HONEYPOT ANTISPAM)
+     ========================================================== */
+  function initContactForm() {
+    var form = document.getElementById('quickQuoteForm');
+    var feedback = document.getElementById('formFeedback');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var honeypot = form.querySelector('[name="_sz_antispam_hp"]');
+      if (honeypot && honeypot.value.trim() !== '') {
+        console.warn('Spam detectado por trampa honeypot.');
+        if (feedback) {
+          feedback.textContent = 'Mensaje recibido correctamente.';
+          feedback.className = 'form-feedback is-success';
+        }
+        form.reset();
+        return;
+      }
+
+      var nameInput = form.querySelector('[name="nombre"]');
+      var telInput = form.querySelector('[name="telefono"]');
+      var serviceSelect = form.querySelector('[name="servicio"]');
+      var messageInput = form.querySelector('[name="mensaje"]');
+
+      var name = nameInput ? nameInput.value.trim() : '';
+      var tel = telInput ? telInput.value.trim() : '';
+      var service = serviceSelect ? serviceSelect.value : '';
+      var message = messageInput ? messageInput.value.trim() : '';
+
+      if (!name || !tel || !message) {
+        if (feedback) {
+          feedback.textContent = 'Por favor completá los campos obligatorios (*).';
+          feedback.className = 'form-feedback is-error';
+        }
+        return;
+      }
+
+      // Mensaje estructurado para WhatsApp
+      var waMessage = 'Hola SZ Mantenimiento! Mi nombre es ' + name +
+        (tel ? ' (Tel: ' + tel + ')' : '') + '.' +
+        (service ? '\nServicio de interés: ' + service : '') +
+        '\nConsulta: ' + message;
+
+      var waUrl = 'https://wa.me/5493412580840?text=' + encodeURIComponent(waMessage);
+
+      trackEvent('form_submission', {
+        service_requested: service,
+        has_phone: Boolean(tel)
+      });
+
+      if (feedback) {
+        feedback.textContent = '¡Excelente! Abriendo WhatsApp con tus datos...';
+        feedback.className = 'form-feedback is-success';
+      }
+
+      setTimeout(function () {
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+        form.reset();
+      }, 400);
+    });
+  }
+
+  /* ==========================================================
+     INICIALIZACIÓN GENERAL
      ========================================================== */
   document.addEventListener('DOMContentLoaded', function () {
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -364,5 +632,9 @@
     initMaintenance(reduceMotion);
     initAssembly(reduceMotion);
     initFloatingWhatsApp();
+    initCookieConsent();
+    initLegalModals();
+    initAnalyticsAndTracking();
+    initContactForm();
   });
 })();

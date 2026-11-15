@@ -48,6 +48,10 @@
   color: var(--fr-red);
 }
 
+.flyer-retro .back-top:active {
+  transform: translateY(-2px);
+}
+
 /* Responsive Footer */
 @media (max-width: 480px) {
   .flyer-retro .retro-footer {

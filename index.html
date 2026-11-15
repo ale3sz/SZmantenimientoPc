@@ -5,21 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SZ Mantenimiento de PC | Tu compu, en buenas manos · Rosario</title>
 
-  <meta name="description" content="Taller de PC en Rosario. Armado gamer y de oficina, limpieza interna, pasta térmica, instalación de Windows y optimización. Diagnóstico bonificado si hacés la reparación. WhatsApp 341 258 0840." />
-  <meta name="keywords" content="SZ Mantenimiento, taller de pc rosario, reparacion de computadoras, armado pc gamer, pasta termica, rosario" />
+  <!-- SEO On-Page Técnico -->
+  <meta name="description" content="Taller de PC en Rosario. Armado gamer y oficina, limpieza profunda, pasta térmica y optimización. Diagnóstico bonificado. WhatsApp 341 258 0840." />
+  <meta name="keywords" content="SZ Mantenimiento, taller de pc rosario, reparacion de computadoras rosario, armado pc gamer rosario, pasta termica rosario, limpieza pc rosario" />
   <meta name="author" content="SZ Mantenimiento de PC" />
-  <meta name="theme-color" content="#1c1a17" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://szmantenimiento.com.ar/" />
+  <meta name="theme-color" content="#141311" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="SZ Mantenimiento de PC | Rosario" />
-  <meta property="og:description" content="Tu compu, en buenas manos. Armado, limpieza y puesta a punto en Rosario." />
-  <meta property="og:image" content="./graficas/sello.jfif" />
+  <!-- Favicon, Iconos Web App y PWA Manifest -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="manifest" href="./site.webmanifest" />
+
+  <!-- Open Graph / Previsualizaciones en WhatsApp, Facebook, LinkedIn -->
+  <meta property="og:site_name" content="SZ Mantenimiento de PC" />
+  <meta property="og:title" content="SZ Mantenimiento de PC | Tu compu, en buenas manos · Rosario" />
+  <meta property="og:description" content="Taller de computación en Rosario. Armado gamer y oficina, limpieza profunda, pasta térmica y diagnóstico bonificado." />
+  <meta property="og:url" content="https://szmantenimiento.com.ar/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
+  <meta property="og:image" content="https://szmantenimiento.com.ar/graficas/og-preview.jpg" />
+  <meta property="og:image:secure_url" content="https://szmantenimiento.com.ar/graficas/og-preview.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SZ Mantenimiento de PC - Taller de computación en Rosario" />
 
-  <!-- Favicon & Preload -->
-  <link rel="icon" type="image/png" href="./graficas/logo/logo_sz_transparente_crema.png" />
-  <link rel="preload" as="image" href="./graficas/limpieza_despues.jfif" />
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SZ Mantenimiento de PC | Rosario" />
+  <meta name="twitter:description" content="Tu compu, en buenas manos. Armado gamer y oficina, limpieza y optimización en Rosario." />
+  <meta name="twitter:image" content="https://szmantenimiento.com.ar/graficas/og-preview.jpg" />
+  <meta name="twitter:image:alt" content="SZ Mantenimiento de PC Rosario" />
+
+  <!-- Preload del LCP Hero Image -->
+  <link rel="preload" as="image" href="./graficas/sello.webp" type="image/webp" fetchpriority="high" />
 
   <!-- Google Fonts: Anton (titulares de afiche), Oswald (etiquetas de taller), Barlow (cuerpo de imprenta) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,11 +61,108 @@
   <link rel="stylesheet" href="./css/footer.css" />
   <link rel="stylesheet" href="./css/floating-wa.css" />
   <link rel="stylesheet" href="./css/animations.css" />
+  <link rel="stylesheet" href="./css/legal-cookies.css" />
+
+  <!-- Datos Estructurados Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ComputerRepairService",
+        "@id": "https://szmantenimiento.com.ar/#localbusiness",
+        "name": "SZ Mantenimiento de PC",
+        "alternateName": "SZ PC Rosario",
+        "description": "Taller de computación en Rosario. Armado de computadoras gamer y oficina, limpieza interna profunda, cambio de pasta térmica Arctic MX-4, instalación de software y diagnóstico bonificado.",
+        "url": "https://szmantenimiento.com.ar/",
+        "telephone": "+54 9 341 258 0840",
+        "priceRange": "$$",
+        "image": "https://szmantenimiento.com.ar/graficas/og-preview.jpg",
+        "logo": "https://szmantenimiento.com.ar/graficas/logo/logo_sz_transparente_crema.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rosario",
+          "addressRegion": "Santa Fe",
+          "addressCountry": "AR",
+          "postalCode": "2000"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -32.94682,
+          "longitude": -60.63932
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          }
+        ],
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Rosario"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Gran Rosario"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Reparación y Armado de PC",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Armado gamer y de oficina"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Limpieza interna profunda y cambio de pasta térmica"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Instalación de Windows, drivers y optimización"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Diagnóstico bonificado con la reparación"
+              }
+            }
+          ]
+        },
+        "sameAs": [
+          "https://wa.me/5493412580840",
+          "https://www.instagram.com/szmantenimiento"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://szmantenimiento.com.ar/#website",
+        "url": "https://szmantenimiento.com.ar/",
+        "name": "SZ Mantenimiento de PC",
+        "inLanguage": "es"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#servicios">Saltar al contenido</a>
 
-  <!-- Iconos reutilizables -->
+  <!-- Iconos SVG reutilizables -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-wa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></symbol>
@@ -50,6 +170,8 @@
     <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M5 12l7-7 7 7"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0Z"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
   </svg>
 
   <main class="flyer-retro">
@@ -57,7 +179,7 @@
     <header class="retro-header" id="retroHeader">
       <div class="retro-header-inner">
         <a href="#inicio" class="retro-brand" aria-label="SZ Mantenimiento de PC, inicio" data-testid="link-home-brand">
-          <img src="./graficas/logo/logo_sz_transparente_crema.png" alt="SZ" width="70" height="48" />
+          <img src="./graficas/logo/logo_sz_transparente_crema.png" alt="SZ Mantenimiento de PC Rosario" width="70" height="48" />
           <span><small>MANTENIMIENTO<br />DE PC</small></span>
         </a>
 
@@ -132,7 +254,10 @@
               <circle cx="45" cy="120" r="5" fill="currentColor" />
             </svg>
             <div class="mascot-frame">
-              <img src="./graficas/sello.jfif" alt="Sello de SZ Mantenimiento de PC: la mascota, una computadora sonriente con destornillador" width="360" height="360" fetchpriority="high" />
+              <picture>
+                <source srcset="./graficas/sello.webp" type="image/webp" />
+                <img src="./graficas/sello_opt.jpg" alt="Sello oficial de SZ Mantenimiento de PC: computadora retro sonriente con destornillador" width="360" height="360" fetchpriority="high" decoding="sync" />
+              </picture>
             </div>
             <div class="mascot-ribbon" aria-hidden="true">¡TU EQUIPO<br />TIENE ARREGLO!</div>
             <div class="mascot-side-note" aria-hidden="true">HECHO CON<br />CUIDADO<b>SZ</b></div>
@@ -181,7 +306,7 @@
             <h3 data-testid="text-service-title-01">Armado gamer y de oficina</h3>
             <p>Un equipo pensado para lo que necesitás: juego, trabajo o uso diario.</p>
           </div>
-          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Armado%20gamer%20y%20de%20oficina." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Armado gamer y de oficina" data-testid="link-whatsapp-service-01">
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Armado%20gamer%20y%20de%20oficina." target="_blank" rel="noopener noreferrer" class="service-arrow wa-cta" aria-label="Consultar por WhatsApp: Armado gamer y de oficina" data-testid="link-whatsapp-service-01">
             <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
         </article>
@@ -199,7 +324,7 @@
             <h3 data-testid="text-service-title-02">Windows y programas</h3>
             <p>Instalación y configuración de Windows, drivers y software.</p>
           </div>
-          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Windows%20y%20programas." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Windows y programas" data-testid="link-whatsapp-service-02">
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Windows%20y%20programas." target="_blank" rel="noopener noreferrer" class="service-arrow wa-cta" aria-label="Consultar por WhatsApp: Windows y programas" data-testid="link-whatsapp-service-02">
             <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
         </article>
@@ -218,7 +343,7 @@
             <h3 data-testid="text-service-title-03">Limpieza interna + pasta térmica</h3>
             <p>Limpieza de componentes y reemplazo de pasta térmica.</p>
           </div>
-          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Limpieza%20interna%20y%20cambio%20de%20pasta%20t%C3%A9rmica." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Limpieza interna y pasta térmica" data-testid="link-whatsapp-service-03">
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Limpieza%20interna%20y%20cambio%20de%20pasta%20t%C3%A9rmica." target="_blank" rel="noopener noreferrer" class="service-arrow wa-cta" aria-label="Consultar por WhatsApp: Limpieza interna y pasta térmica" data-testid="link-whatsapp-service-03">
             <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
         </article>
@@ -237,7 +362,7 @@
             <h3 data-testid="text-service-title-04">Optimización del sistema</h3>
             <p>Ajustes para que el sistema funcione de manera más fluida.</p>
           </div>
-          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Optimizaci%C3%B3n%20del%20sistema." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Optimización del sistema" data-testid="link-whatsapp-service-04">
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20Optimizaci%C3%B3n%20del%20sistema." target="_blank" rel="noopener noreferrer" class="service-arrow wa-cta" aria-label="Consultar por WhatsApp: Optimización del sistema" data-testid="link-whatsapp-service-04">
             <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
         </article>
@@ -257,14 +382,14 @@
             <h3 data-testid="text-service-title-05">Asesoramiento en componentes</h3>
             <p>Orientación para elegir componentes compatibles con tu equipo.</p>
           </div>
-          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20asesorarme%20sobre%20componentes%20y%20upgrades." target="_blank" rel="noopener noreferrer" class="service-arrow" aria-label="Consultar por WhatsApp: Asesoramiento en componentes" data-testid="link-whatsapp-service-05">
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20asesorarme%20sobre%20componentes%20y%20upgrades." target="_blank" rel="noopener noreferrer" class="service-arrow wa-cta" aria-label="Consultar por WhatsApp: Asesoramiento en componentes" data-testid="link-whatsapp-service-05">
             <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
         </article>
 
         <div class="sheet-bottom">
           <span>¿No sabés por dónde empezar?</span>
-          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20contarte%20qu%C3%A9%20le%20pasa%20a%20mi%20PC." target="_blank" rel="noopener noreferrer" class="inline-contact" data-testid="link-whatsapp-services">
+          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20contarte%20qu%C3%A9%20le%20pasa%20a%20mi%20PC." target="_blank" rel="noopener noreferrer" class="inline-contact wa-cta" data-testid="link-whatsapp-services">
             Contanos qué le pasa a tu PC
             <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
@@ -276,13 +401,14 @@
     <section class="retro-maintenance on-dark" id="mantenimiento" aria-labelledby="mantenimiento-title">
       <div class="maintenance-layout">
         <div class="maintenance-copy">
+          <div class="maintenance-ribbon" aria-hidden="true">EVITÁ QUE SE QUEMEN TUS COMPONENTES</div>
           <h2 class="display section-title" id="mantenimiento-title">¿Tu PC está lenta<br />o hace <em>mucho ruido?</em></h2>
-          <p>El polvo y el calor pueden afectar el funcionamiento del equipo. Una limpieza interna y el cambio de pasta térmica son parte del mantenimiento.</p>
+          <p>El polvo y el calor son los peores enemigos del hardware. Una limpieza a fondo y el cambio de pasta térmica de alto rendimiento le devuelven la vida a tu equipo.</p>
 
           <ul class="maintenance-points">
-            <li><span class="point-check"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>Limpieza interna</li>
-            <li><span class="point-check"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>Reemplazo de pasta térmica</li>
-            <li><span class="point-check"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>Atención al ruido y la temperatura</li>
+            <li><span class="point-check">⚙</span>Limpieza profunda de polvo y pelusas</li>
+            <li><span class="point-check">⚙</span>Pasta térmica Arctic MX-4 de alto rendimiento</li>
+            <li><span class="point-check">⚙</span>Menos ruido, más FPS y máxima vida útil</li>
           </ul>
 
           <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20consultar%20por%20mantenimiento%20y%20ruido%20en%20mi%20equipo." target="_blank" rel="noopener noreferrer" class="retro-button cream-button wa-cta" data-testid="link-whatsapp-maintenance">
@@ -305,7 +431,7 @@
               Tocá para limpiar el polvo
             </span>
             <span class="clean-sparkle" id="cleanSparkle" aria-hidden="true">✦</span>
-            <img id="cleaningImg" src="./graficas/web/limpieza%20antes%20reemplazo.png" alt="Interior de una PC antes de la limpieza: polvo acumulado en gabinete, fuente y cables" width="941" height="1672" loading="lazy" decoding="async" />
+            <img id="cleaningImg" src="./graficas/limpieza_antes.webp" alt="Interior de una PC antes de la limpieza: polvo acumulado en gabinete, fuente y cables" width="941" height="1672" loading="lazy" decoding="async" />
             <span id="cleaningBadge" class="cleaning-badge before-badge" aria-live="polite">Antes · polvo acumulado y riesgo térmico</span>
           </div>
 
@@ -317,9 +443,12 @@
     <!-- SECCIÓN ARMADO -->
     <section class="retro-assembly on-light" id="armado" aria-labelledby="armado-title">
       <div class="assembly-poster">
-        <video id="assemblyVideo" src="./graficas/ensamble_pc_web.mp4" poster="./graficas/ensamble_final.webp" autoplay loop muted playsinline preload="metadata" width="1280" height="720" aria-label="Ilustración animada de armado de PC en mesa de taller SZ"></video>
+        <video id="assemblyVideo" poster="./graficas/ensamble_final.webp" autoplay loop muted playsinline preload="metadata" width="1280" height="720" aria-label="Ilustración animada de armado de PC en mesa de taller SZ">
+          <source src="./graficas/ensamble_pc_web.mp4" type="video/mp4">
+          <img src="./graficas/ensamble_final.webp" alt="Mesa de taller con ensamble de PC ilustrado estilo retro SZ" width="1280" height="720" loading="lazy">
+        </video>
         <span class="assembly-sticker" aria-hidden="true">
-          <img src="./graficas/sello.jfif" alt="" width="96" height="96" loading="lazy" decoding="async" />
+          <img src="./graficas/sello.webp" alt="" width="96" height="96" loading="lazy" decoding="async" />
         </span>
         <span class="poster-corner" aria-hidden="true">ENSAMBLE SZ<br />ROSARIO</span>
       </div>
@@ -357,8 +486,12 @@
 
         <div class="contact-main">
           <div>
+            <div class="contact-bonified-badge" aria-label="Beneficio: Diagnóstico bonificado">
+              <span class="badge-star" aria-hidden="true">✦</span>
+              <span><strong>DIAGNÓSTICO 100% BONIFICADO</strong> · Si reparás con nosotros, la revisión es gratis</span>
+            </div>
             <h2 class="display" id="contacto-title">Contanos qué<br /><em>necesita tu PC.</em></h2>
-            <p>Escribinos y conversamos sobre tu equipo. Atendemos en Rosario.</p>
+            <p>Escribinos por WhatsApp o completá el formulario para recibir un diagnóstico claro y sin vueltas en Rosario.</p>
           </div>
 
           <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20hacer%20una%20consulta%20sobre%20mi%20equipo." target="_blank" rel="noopener noreferrer" class="contact-button wa-cta" aria-label="Escribir por WhatsApp al 341 258 0840" data-testid="link-whatsapp-contact">
@@ -373,8 +506,54 @@
           </a>
         </div>
 
+        <!-- FORMULARIO DE CONSULTA RÁPIDA CON HONEYPOT SPAM PROTECTION -->
+        <div class="contact-form-wrap">
+          <h3 class="contact-form-title">¿Preferís escribirnos desde aquí?</h3>
+          <p class="contact-form-subtitle">Completá tus datos y te respondemos por WhatsApp o email a la brevedad.</p>
+
+          <form class="retro-form" id="quickQuoteForm" novalidate>
+            <!-- Campo trampa Honeypot (invisible para humanos, detecta bots automáticamente) -->
+            <input type="text" name="_sz_antispam_hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="sr-only-honeypot" />
+
+            <div class="form-group">
+              <label for="formNombre">Tu Nombre *</label>
+              <input type="text" id="formNombre" name="nombre" required placeholder="Ej: Lucas Martínez" autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="formTelefono">Teléfono o WhatsApp *</label>
+              <input type="tel" id="formTelefono" name="telefono" required placeholder="Ej: 341 123 4567" autocomplete="tel" />
+            </div>
+
+            <div class="form-group full-width">
+              <label for="formServicio">Servicio de interés</label>
+              <select id="formServicio" name="servicio">
+                <option value="Limpieza profunda y pasta térmica">Limpieza profunda y cambio de pasta térmica</option>
+                <option value="Armado de PC Gamer / Oficina">Armado de PC Gamer o de Oficina</option>
+                <option value="Windows y optimización de sistema">Instalación de Windows y optimización</option>
+                <option value="Diagnóstico general por fallas">Diagnóstico general por ruidos o fallas</option>
+                <option value="Asesoramiento en upgrades">Asesoramiento en componentes y upgrades</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="formMensaje">¿Qué problema tiene tu PC o qué estás buscando? *</label>
+              <textarea id="formMensaje" name="mensaje" rows="3" required placeholder="Contanos brevemente qué le pasa a tu equipo..."></textarea>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="retro-button red-button ribbon-style" style="min-height: 48px; border: 2px solid var(--fr-paper-light);">
+                <svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>
+                Enviar consulta por WhatsApp
+                <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+
         <div class="contact-bottom">
-          <span>SZ Mantenimiento de PC</span>
+          <span>SZ Mantenimiento de PC · Rosario, Santa Fe</span>
           <span>Reparar · Cuidar · Armar</span>
         </div>
       </div>
@@ -383,15 +562,37 @@
     <!-- FOOTER -->
     <footer class="retro-footer">
       <a href="#inicio" class="footer-brand" data-testid="link-home-footer">
-        <img src="./graficas/logo/logo_sz_transparente_negro.png" alt="SZ" width="58" height="40" loading="lazy" />
+        <img src="./graficas/logo/logo_sz_transparente_negro.png" alt="SZ Mantenimiento de PC" width="58" height="40" loading="lazy" />
         <span><small>MANTENIMIENTO<br />DE PC</small></span>
       </a>
-      <span>Un taller para que tu PC siga andando.</span>
+      <span>Un taller para que tu PC siga andando. Rosario, Argentina.</span>
       <a href="#inicio" class="back-top" data-testid="link-back-to-top">
         VOLVER ARRIBA
         <svg width="14" height="14" aria-hidden="true"><use href="#i-up"/></svg>
       </a>
     </footer>
+
+    <!-- BARRA LEGAL Y PRIVACIDAD EN EL FOOTER -->
+    <div class="footer-legal-bar">
+      <div class="footer-legal-links">
+        <button type="button" data-modal-target="legalNoticeModal">Aviso Legal</button>
+        <span>·</span>
+        <button type="button" data-modal-target="privacyPolicyModal">Política de Privacidad</button>
+        <span>·</span>
+        <button type="button" data-open-cookies>Configuración de Cookies</button>
+      </div>
+
+      <div class="footer-social-links">
+        <a href="https://www.instagram.com/szmantenimiento" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram">
+          <span>Instagram @szmantenimiento</span>
+        </a>
+        <span>·</span>
+        <a href="https://maps.google.com/?q=Rosario,+Santa+Fe,+Argentina" target="_blank" rel="noopener noreferrer" aria-label="Ubicación en Rosario, Santa Fe">
+          <svg width="14" height="14" aria-hidden="true"><use href="#i-map"/></svg>
+          Rosario, Santa Fe
+        </a>
+      </div>
+    </div>
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
     <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Te%20escribo%20desde%20la%20p%C3%A1gina%20web." target="_blank" rel="noopener noreferrer" class="floating-whatsapp is-hidden" id="floatingWa" aria-label="Escribinos por WhatsApp" data-testid="link-whatsapp-floating">
@@ -399,6 +600,145 @@
       <span>Escribinos</span>
     </a>
   </main>
+
+  <!-- ==========================================================
+       BANNER DE CONSENTIMIENTO DE COOKIES
+       ========================================================== -->
+  <aside class="retro-cookie-banner is-hidden" id="cookieBanner" role="region" aria-label="Consentimiento de cookies" hidden>
+    <div class="cookie-header">
+      <span class="cookie-badge">Privacidad</span>
+      <h3 class="cookie-title">Tu privacidad nos importa</h3>
+    </div>
+    <p class="cookie-desc">Utilizamos cookies técnicas para el funcionamiento del sitio y analíticas anónimas para mejorar tu experiencia de navegación. ¿Nos das tu consentimiento?</p>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptBtn">Aceptar todas</button>
+      <button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectBtn">Solo necesarias</button>
+      <button type="button" class="cookie-btn cookie-btn-config" id="cookieConfigBtn">Configurar</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================
+       MODAL 1: AVISO LEGAL
+       ========================================================== -->
+  <div class="retro-modal-backdrop" id="legalNoticeModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle" aria-hidden="true">
+    <div class="retro-modal">
+      <div class="retro-modal-header">
+        <h3 class="retro-modal-title" id="legalTitle">Aviso Legal</h3>
+        <button type="button" class="retro-modal-close" aria-label="Cerrar aviso legal">&times;</button>
+      </div>
+      <div class="retro-modal-body">
+        <h4>1. Datos Identificativos del Titular</h4>
+        <p>En cumplimiento con las normativas vigentes sobre servicios de la sociedad de la información y comercio electrónico, se informa que este sitio web es operado por:</p>
+        <table class="legal-data-table">
+          <tbody>
+            <tr>
+              <th>Denominación</th>
+              <td>SZ Mantenimiento de PC</td>
+            </tr>
+            <tr>
+              <th>Actividad</th>
+              <td>Servicios técnicos de computación, mantenimiento, ensamble y reparación</td>
+            </tr>
+            <tr>
+              <th>Ubicación / Taller</th>
+              <td>Rosario, Santa Fe, República Argentina (Atención técnica y recepción con turno previo)</td>
+            </tr>
+            <tr>
+              <th>Contacto directo</th>
+              <td>WhatsApp: +54 9 341 258-0840</td>
+            </tr>
+            <tr>
+              <th>Correo electrónico</th>
+              <td>contacto@szmantenimiento.com.ar</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>2. Condiciones del Servicio y Presupuestos</h4>
+        <p>El servicio de <strong>Diagnóstico Bonificado</strong> aplica de manera directa cuando el cliente decide llevar a cabo la reparación o servicio técnico cotizado en nuestro taller. En caso de solicitar únicamente la revisión técnica sin ejecución del trabajo presupuestado, podrá aplicar un arancel administrativo previamente acordado.</p>
+
+        <h4>3. Garantía de Reparación</h4>
+        <p>Todos nuestros trabajos de ensamble y mantenimiento cuentan con garantía técnica de mano de obra (de 30 a 90 días según el trabajo). La garantía no cubre daños por golpes, derrames de líquidos, sobrecargas eléctricas externas o manipulación indebida posterior por parte de terceros.</p>
+
+        <h4>4. Propiedad Intelectual</h4>
+        <p>El diseño gráfico, ilustraciones estilo retro, logotipo "SZ Mantenimiento de PC" y código fuente son propiedad exclusiva o cuentan con las autorizaciones pertinentes. Queda prohibida su reproducción sin consentimiento expreso.</p>
+      </div>
+      <div class="retro-modal-footer">
+        <button type="button" class="cookie-btn cookie-btn-accept retro-modal-close">Entendido y cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       MODAL 2: POLÍTICA DE PRIVACIDAD
+       ========================================================== -->
+  <div class="retro-modal-backdrop" id="privacyPolicyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
+    <div class="retro-modal">
+      <div class="retro-modal-header">
+        <h3 class="retro-modal-title" id="privacyTitle">Política de Privacidad</h3>
+        <button type="button" class="retro-modal-close" aria-label="Cerrar política de privacidad">&times;</button>
+      </div>
+      <div class="retro-modal-body">
+        <h4>1. Compromiso de Protección de Datos</h4>
+        <p>En <strong>SZ Mantenimiento de PC</strong> valoramos profundamente la privacidad de nuestros clientes y usuarios. Tratamos los datos personales de conformidad con la <strong>Ley 25.326 de Protección de los Datos Personales de la República Argentina</strong> y los estándares internacionales de privacidad (RGPD).</p>
+
+        <h4>2. Qué Datos Recopilamos y Para Qué</h4>
+        <ul>
+          <li><strong>Datos de contacto:</strong> Nombre y número de teléfono/WhatsApp proporcionados al realizar consultas o solicitar turnos, con el único fin de responder tu consulta, coordinar el servicio y brindar seguimiento posventa.</li>
+          <li><strong>Datos técnicos de navegación:</strong> Métricas anónimas de visita (páginas vistas, dispositivo, procedencia) procesadas únicamente si otorgás tu consentimiento en el banner de cookies.</li>
+        </ul>
+
+        <h4>3. No Cesión a Terceros</h4>
+        <p>Tus datos de contacto <strong>nunca son vendidos, transferidos ni compartidos</strong> con empresas de publicidad o bases de datos comerciales de terceros.</p>
+
+        <h4>4. Derechos del Usuario (Acceso, Rectificación y Supresión)</h4>
+        <p>Tienes el derecho en cualquier momento de consultar qué datos tuyos poseemos, solicitar correcciones o pedir la eliminación definitiva de tu información de nuestros registros de contacto. Para ejercer estos derechos, simplemente escribinos por WhatsApp al <strong>+54 9 341 258-0840</strong> o por email a <strong>contacto@szmantenimiento.com.ar</strong>.</p>
+      </div>
+      <div class="retro-modal-footer">
+        <button type="button" class="cookie-btn cookie-btn-accept retro-modal-close">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       MODAL 3: CONFIGURACIÓN DE COOKIES
+       ========================================================== -->
+  <div class="retro-modal-backdrop" id="cookieConfigModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-hidden="true">
+    <div class="retro-modal">
+      <div class="retro-modal-header">
+        <h3 class="retro-modal-title" id="cookieModalTitle">Preferencias de Cookies</h3>
+        <button type="button" class="retro-modal-close" aria-label="Cerrar configuración de cookies">&times;</button>
+      </div>
+      <div class="retro-modal-body">
+        <p>Ajustá qué cookies permitís que usemos durante tu visita. Las cookies técnicas son obligatorias para el correcto funcionamiento del sitio.</p>
+
+        <div class="cookie-option-row">
+          <div class="cookie-option-info">
+            <h5>Cookies Técnicas (Necesarias)</h5>
+            <p>Imprescindibles para recordar tus preferencias de cookies, navegación segura y funciones esenciales. No recopilan datos personales.</p>
+          </div>
+          <label class="cookie-toggle">
+            <input type="checkbox" checked disabled />
+            <span>Siempre activas</span>
+          </label>
+        </div>
+
+        <div class="cookie-option-row">
+          <div class="cookie-option-info">
+            <h5>Cookies Analíticas y de Rendimiento</h5>
+            <p>Nos permiten conocer qué secciones son más útiles para los usuarios (Google Analytics anónimo) con IPs enmascaradas.</p>
+          </div>
+          <label class="cookie-toggle">
+            <input type="checkbox" id="cookieChkAnalytics" checked />
+            <span>Permitir</span>
+          </label>
+        </div>
+      </div>
+      <div class="retro-modal-footer">
+        <button type="button" class="cookie-btn cookie-btn-accept" id="saveCookieConfigBtn">Guardar Preferencias</button>
+      </div>
+    </div>
+  </div>
 
   <!-- JavaScript modular: Afiche Retro -->
   <script src="./js/main.js" defer></script>
