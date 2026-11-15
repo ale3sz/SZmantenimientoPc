@@ -67,8 +67,8 @@ export function Hero() {
               <circle cx="390" cy="295" r="5" fill="currentColor" />
               <circle cx="45" cy="120" r="5" fill="currentColor" />
             </svg>
-            <div className="mascot-frame">
-              <img src={mascotSeal} alt="Sello oficial de SZ Mantenimiento de PC" width={360} height={360} />
+            <div className="mascot-frame is-animated">
+              <img src="/graficas/mascota_animada.webp" alt="Mascota animada de SZ Mantenimiento de PC" width={360} height={360} />
             </div>
             <div className="mascot-ribbon" aria-hidden="true">¡TU EQUIPO<br />TIENE ARREGLO!</div>
             <div className="mascot-side-note" aria-hidden="true">HECHO CON<br />CUIDADO<b>SZ</b></div>
