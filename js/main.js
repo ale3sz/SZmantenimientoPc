@@ -636,6 +636,5 @@
     initLegalModals();
     initAnalyticsAndTracking();
     initContactForm();
-    if (window.initMascot) window.initMascot(reduceMotion);
   });
 })();

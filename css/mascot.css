@@ -1,53 +1,27 @@
 /**
- * SZ MANTENIMIENTO DE PC — ESTILOS DE LA MASCOTA ANIMADA
- * Soporta las 3 opciones propuestas y el selector interactivo de previsualización.
+ * SZ MANTENIMIENTO DE PC — DIVISOR DE SECCIÓN CON MASCOTA ANIMADA
+ * Mascota clásica caminando con destornillador y guiño como remate lúdico de taller
  */
 
-/* ==========================================================
-   1. HERO: MASCOTA ANIMADA EN EL MARCO CIRCULAR (OPCIÓN 1)
-   ========================================================== */
-.flyer-retro .mascot-frame.is-animated {
-  background: radial-gradient(circle at 50% 45%, #2a2318 0%, #15120c 75%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.flyer-retro .mascot-frame.is-animated img {
-  object-fit: contain;
-  width: 95%;
-  height: 95%;
-  transform-origin: center bottom;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
-}
-
-/* ==========================================================
-   2. DIVISOR DE SECCIÓN / PRE-FOOTER (OPCIÓN 2)
-   ========================================================== */
 .mascot-walk-strip {
-  display: none; /* Se activa con clase .is-active */
+  display: block;
   width: min(1080px, 94%);
-  margin: 36px auto 16px;
+  margin: 36px auto 20px;
   background: var(--fr-cream);
   border: 3px solid var(--fr-ink);
   box-shadow: 6px 6px 0 var(--fr-ink);
   border-radius: 8px;
-  padding: 16px 24px;
+  padding: 16px 26px;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-}
-
-.mascot-walk-strip.is-active {
-  display: block;
 }
 
 .walk-strip-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 22px;
   position: relative;
   z-index: 2;
 }
@@ -55,25 +29,27 @@
 .walk-strip-mascot-box {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-shrink: 0;
 }
 
 .walk-strip-mascot-box img {
-  width: 90px;
-  height: 84px;
+  width: 96px;
+  height: 86px;
   object-fit: contain;
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(2px 5px 8px rgba(0, 0, 0, 0.28));
+  transform-origin: center bottom;
+  animation: rubber-hose-bop 3.2s ease-in-out infinite;
 }
 
 .walk-strip-bubble {
   background: #fdfbf7;
   color: #15120c !important;
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: .04em;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 6px;
   border: 2px solid #15120c;
   box-shadow: 3px 3px 0 #15120c;
@@ -84,10 +60,10 @@
 .walk-strip-bubble::before {
   content: '';
   position: absolute;
-  left: -8px;
+  left: -9px;
   top: 50%;
   transform: translateY(-50%);
-  border-width: 6px 8px 6px 0;
+  border-width: 6px 9px 6px 0;
   border-style: solid;
   border-color: transparent #15120c transparent transparent;
 }
@@ -95,10 +71,10 @@
 .walk-strip-bubble::after {
   content: '';
   position: absolute;
-  left: -5px;
+  left: -6px;
   top: 50%;
   transform: translateY(-50%);
-  border-width: 5px 6px 5px 0;
+  border-width: 5px 7px 5px 0;
   border-style: solid;
   border-color: transparent #fdfbf7 transparent transparent;
 }
@@ -118,7 +94,7 @@
   letter-spacing: .08em;
   background: var(--fr-red);
   color: #fff;
-  padding: 2px 10px;
+  padding: 3px 12px;
   border: 1.5px solid var(--fr-ink);
   box-shadow: 2px 2px 0 var(--fr-ink);
   border-radius: 3px;
@@ -127,7 +103,7 @@
 .walk-strip-title {
   font-family: var(--font-title);
   font-size: 22px;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--fr-ink);
   letter-spacing: .02em;
   text-transform: uppercase;
@@ -139,220 +115,18 @@
   color: #43392a;
 }
 
-/* ==========================================================
-   3. ASISTENTE FLOTANTE JUNTO A WHATSAPP (OPCIÓN 3)
-   ========================================================== */
-.mascot-floating-companion {
-  display: none; /* Se activa con clase .is-active */
-  position: fixed;
-  right: 22px;
-  bottom: 96px;
-  z-index: 998;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  pointer-events: auto;
-  opacity: 0;
-  transform: translateY(12px) scale(0.92);
-  transition: opacity .3s ease, transform .3s ease;
-}
-
-.mascot-floating-companion.is-active {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.mascot-floating-bubble {
-  background: #fdfbf7;
-  color: #15120c !important;
-  border: 2px solid #15120c;
-  border-radius: 8px;
-  box-shadow: 4px 4px 0 #15120c;
-  padding: 8px 12px;
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: right;
-  min-width: 130px;
-  position: relative;
-  animation: float-bop 3s ease-in-out infinite;
-}
-
-.mascot-floating-bubble small {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 11px;
-  color: #e63946;
-  font-weight: 700;
-  margin-top: 2px;
-  letter-spacing: .03em;
-  text-transform: uppercase;
-}
-
-.mascot-floating-bubble::after {
-  content: '';
-  position: absolute;
-  right: 28px;
-  bottom: -8px;
-  border-width: 8px 6px 0 6px;
-  border-style: solid;
-  border-color: #15120c transparent transparent transparent;
-}
-
-.mascot-floating-avatar {
-  display: block;
-  width: 76px;
-  height: 72px;
-  cursor: pointer;
-  filter: drop-shadow(2px 5px 8px rgba(0, 0, 0, 0.35));
-  transition: transform .2s ease;
-}
-
-.mascot-floating-avatar:hover {
-  transform: scale(1.08) rotate(-4deg);
-}
-
-.mascot-floating-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* ==========================================================
-   4. SELECTOR INTERACTIVO DE PREVISUALIZACIÓN (DOCK)
-   ========================================================== */
-.mascot-switcher-dock {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  z-index: 1001;
-  background: var(--fr-night);
-  border: 2.5px solid var(--fr-cream-ink);
-  border-radius: 8px;
-  box-shadow: 5px 5px 0 var(--fr-ink);
-  color: var(--fr-cream);
-  padding: 10px 14px;
-  font-family: var(--font-display);
-  max-width: 320px;
-  box-sizing: border-box;
-  transition: transform .25s ease, opacity .25s ease;
-}
-
-.switcher-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.switcher-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.switcher-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #25d366;
-  box-shadow: 0 0 6px #25d366;
-  animation: pulse-dot 1.5s infinite alternate;
-}
-
-.switcher-title {
-  font-size: 13px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--fr-gold);
-}
-
-.switcher-toggle-btn {
-  background: transparent;
-  border: 1px solid rgba(239, 226, 196, .3);
-  color: var(--fr-cream);
-  font-size: 12px;
-  padding: 1px 6px;
-  border-radius: 3px;
-  cursor: pointer;
-  line-height: 1;
-}
-
-.switcher-toggle-btn:hover {
-  background: rgba(239, 226, 196, .15);
-}
-
-.switcher-hint {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: rgba(239, 226, 196, .78);
-  margin: 0 0 8px 0;
-}
-
-.switcher-pills {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
-}
-
-.switcher-pill {
-  background: #2b251c;
-  border: 1.5px solid rgba(239, 226, 196, .4);
-  color: #efe2c4 !important;
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .04em;
-  padding: 7px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all .15s ease;
-  text-align: center;
-}
-
-.switcher-pill:hover {
-  border-color: var(--fr-gold);
-  background: #3c3325;
-  color: #fff !important;
-}
-
-.switcher-pill.active {
-  background: var(--fr-gold);
-  color: #15120c !important;
-  border-color: var(--fr-cream);
-  box-shadow: 2px 2px 0 #15120c;
-  font-weight: 700;
-}
-
-.mascot-switcher-dock.is-collapsed .switcher-body {
-  display: none;
-}
-
-.mascot-switcher-dock.is-collapsed {
-  padding: 6px 10px;
-}
-
-/* ==========================================================
-   ANIMACIONES Y RESPONSIVE
-   ========================================================== */
-@keyframes float-bop {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-@keyframes pulse-dot {
-  0% { opacity: .4; transform: scale(.85); }
-  100% { opacity: 1; transform: scale(1.15); }
-}
-
 @media (max-width: 768px) {
+  .mascot-walk-strip {
+    margin: 24px auto 16px;
+    padding: 14px 16px;
+  }
   .walk-strip-content {
     flex-direction: column;
     text-align: center;
     gap: 12px;
+  }
+  .walk-strip-mascot-box {
+    justify-content: center;
   }
   .walk-strip-info {
     text-align: center;
@@ -360,29 +134,13 @@
   .walk-strip-badge {
     align-self: center;
   }
-  .mascot-floating-companion {
-    right: 14px;
-    bottom: 84px;
-  }
-  .mascot-floating-bubble {
-    font-size: 12px;
-    padding: 6px 10px;
-    max-width: 140px;
-  }
-  .mascot-floating-avatar {
-    width: 62px;
-    height: 58px;
-  }
-  .mascot-switcher-dock {
-    left: 12px;
-    bottom: 12px;
-    max-width: 280px;
+  .walk-strip-title {
+    font-size: 19px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mascot-floating-bubble,
-  .switcher-dot {
+  .walk-strip-mascot-box img {
     animation: none !important;
   }
 }

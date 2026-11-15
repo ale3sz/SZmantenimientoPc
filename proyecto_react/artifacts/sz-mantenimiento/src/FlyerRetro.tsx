@@ -4,6 +4,7 @@ import { Hero } from './components/retro/Hero';
 import { Services } from './components/retro/Services';
 import { Maintenance } from './components/retro/Maintenance';
 import { Assembly } from './components/retro/Assembly';
+import { MascotStrip } from './components/retro/MascotStrip';
 import { Contact } from './components/retro/Contact';
 import { Footer } from './components/retro/Footer';
 import { FloatingWhatsApp } from './components/retro/FloatingWhatsApp';
@@ -16,6 +17,7 @@ export function FlyerRetro() {
       <Services />
       <Maintenance />
       <Assembly />
+      <MascotStrip />
       <Contact />
       <Footer />
       <FloatingWhatsApp />

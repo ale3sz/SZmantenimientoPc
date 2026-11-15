@@ -252,10 +252,10 @@
               <circle cx="390" cy="295" r="5" fill="currentColor" />
               <circle cx="45" cy="120" r="5" fill="currentColor" />
             </svg>
-            <div class="mascot-frame" id="heroMascotFrame">
-              <picture id="heroMascotPicture">
-                <source id="heroMascotSource" srcset="./graficas/sello.webp" type="image/webp" />
-                <img id="heroMascotImg" src="./graficas/sello_opt.jpg" alt="Mascota de SZ Mantenimiento de PC: computadora retro sonriente con destornillador" width="360" height="360" fetchpriority="high" decoding="sync" />
+            <div class="mascot-frame">
+              <picture>
+                <source srcset="./graficas/sello.webp" type="image/webp" />
+                <img src="./graficas/sello_opt.jpg" alt="Sello oficial de SZ Mantenimiento de PC: computadora retro sonriente con destornillador" width="360" height="360" fetchpriority="high" decoding="sync" />
               </picture>
             </div>
             <div class="mascot-ribbon" aria-hidden="true">¡TU EQUIPO<br />TIENE ARREGLO!</div>
@@ -608,17 +608,6 @@
       </div>
     </div>
 
-    <!-- ASISTENTE FLOTANTE JUNTO A WHATSAPP (OPCIÓN 3) -->
-    <div class="mascot-floating-companion" id="mascotFloatingCompanion">
-      <div class="mascot-floating-bubble">
-        ¿Dudas con tu PC?
-        <small>¡Escribinos!</small>
-      </div>
-      <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Te%20escribo%20desde%20la%20p%C3%A1gina%20web." target="_blank" rel="noopener noreferrer" class="mascot-floating-avatar" aria-label="Escribir por WhatsApp a SZ Mantenimiento">
-        <img src="./graficas/mascota_animada.webp" alt="Mascota asistente SZ" width="76" height="72" />
-      </a>
-    </div>
-
     <!-- BOTÓN FLOTANTE WHATSAPP -->
     <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Te%20escribo%20desde%20la%20p%C3%A1gina%20web." target="_blank" rel="noopener noreferrer" class="floating-whatsapp is-hidden" id="floatingWa" aria-label="Escribinos por WhatsApp" data-testid="link-whatsapp-floating">
       <svg width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg>
@@ -765,28 +754,7 @@
     </div>
   </div>
 
-  <!-- DOCK SELECTOR DE PREVISUALIZACIÓN DE MASCOTA -->
-  <aside class="mascot-switcher-dock" id="mascotSwitcherDock" role="region" aria-label="Selector de previsualización de la mascota">
-    <div class="switcher-header">
-      <div class="switcher-title-wrap">
-        <span class="switcher-dot" aria-hidden="true"></span>
-        <span class="switcher-title">Mascota SZ</span>
-      </div>
-      <button type="button" class="switcher-toggle-btn" id="switcherToggleBtn" aria-label="Minimizar panel de opciones" title="Minimizar panel">—</button>
-    </div>
-    <div class="switcher-body" id="switcherBody">
-      <p class="switcher-hint">Probá cada ubicación:</p>
-      <div class="switcher-pills">
-        <button type="button" class="switcher-pill active" data-mascot-mode="1">1. Hero</button>
-        <button type="button" class="switcher-pill" data-mascot-mode="2">2. Divisor</button>
-        <button type="button" class="switcher-pill" data-mascot-mode="3">3. Flotante</button>
-        <button type="button" class="switcher-pill" data-mascot-mode="all">Todas</button>
-      </div>
-    </div>
-  </aside>
-
   <!-- JavaScript modular: Afiche Retro -->
-  <script src="./js/modules/mascot.js" defer></script>
   <script src="./js/main.js" defer></script>
 </body>
 </html>
