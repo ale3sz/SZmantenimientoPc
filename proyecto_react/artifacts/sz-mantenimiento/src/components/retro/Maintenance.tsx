@@ -128,6 +128,15 @@ export function Maintenance() {
         <div className="maintenance-copy">
           <h2 className="display section-title">¿Tu PC está lenta<br />o hace <em>mucho ruido?</em></h2>
           <p>El polvo y el calor pueden afectar el funcionamiento del equipo. Una limpieza interna y el cambio de pasta térmica son parte del mantenimiento.</p>
+
+          <div className="maintenance-mascot-badge" aria-hidden="true">
+            <img src="/graficas/mascota_limpieza_polvo.webp" alt="Mascota quitando el polvo de los componentes" width="70" height="59" loading="lazy" />
+            <div className="badge-text">
+              <span className="badge-tag">CUIDADO DE HARDWARE</span>
+              <strong>Despeje de polvo y sopleteado seguro</strong>
+            </div>
+          </div>
+
           <ul className="maintenance-points">
             <li><span className="point-check"><Check size={14} /></span>Limpieza interna</li>
             <li><span className="point-check"><Check size={14} /></span>Reemplazo de pasta térmica</li>

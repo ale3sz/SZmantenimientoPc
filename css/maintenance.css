@@ -46,7 +46,45 @@
   color: #d8ccb2;
   font-size: 18px;
   line-height: 1.65;
-  margin: 22px 0;
+  margin: 22px 0 16px;
+}
+
+.flyer-retro .maintenance-mascot-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 24px;
+  padding: 10px 16px;
+  background: rgba(253, 246, 227, 0.08);
+  border: 1.5px dashed rgba(253, 246, 227, 0.35);
+  border-radius: 6px;
+  max-width: 460px;
+}
+
+.flyer-retro .maintenance-mascot-badge img {
+  width: 62px;
+  height: auto;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+  flex-shrink: 0;
+}
+
+.flyer-retro .maintenance-mascot-badge .badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.flyer-retro .maintenance-mascot-badge .badge-tag {
+  font: 700 11px var(--font-label);
+  letter-spacing: .12em;
+  color: var(--fr-gold);
+}
+
+.flyer-retro .maintenance-mascot-badge strong {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: .02em;
 }
 
 .flyer-retro .maintenance-points {

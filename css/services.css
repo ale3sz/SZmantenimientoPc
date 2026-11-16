@@ -210,6 +210,34 @@
 .flyer-retro .sheet-bottom {
   padding: 18px 4px;
   flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.flyer-retro .sheet-bottom-mascot-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fr-ink);
+  font: 700 12px var(--font-label);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.flyer-retro .sheet-bottom-mascot-note .quick-mascot-img {
+  width: 44px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  flex-shrink: 0;
+}
+
+.flyer-retro .sheet-bottom-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .flyer-retro .inline-contact {

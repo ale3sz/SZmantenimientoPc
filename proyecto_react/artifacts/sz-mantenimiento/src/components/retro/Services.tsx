@@ -65,15 +65,21 @@ export function Services() {
           );
         })}
         <div className="sheet-bottom">
-          <span>¿No sabés por dónde empezar?</span>
-          <WhatsappLink
-            className="inline-contact"
-            label="Contanos qué le pasa a tu PC"
-            testId="link-whatsapp-services"
-            message="Hola SZ Mantenimiento PC! Quiero contarte qué le pasa a mi PC."
-          >
-            Contanos qué le pasa a tu PC <ArrowRight size={16} />
-          </WhatsappLink>
+          <div className="sheet-bottom-mascot-note" aria-hidden="true">
+            <img src="/graficas/mascota_servicio_rapido.webp" alt="" className="quick-mascot-img" width="48" height="42" loading="lazy" />
+            <span>Servicio ágil en Rosario</span>
+          </div>
+          <div className="sheet-bottom-action">
+            <span>¿No sabés por dónde empezar?</span>
+            <WhatsappLink
+              className="inline-contact"
+              label="Contanos qué le pasa a tu PC"
+              testId="link-whatsapp-services"
+              message="Hola SZ Mantenimiento PC! Quiero contarte qué le pasa a mi PC."
+            >
+              Contanos qué le pasa a tu PC <ArrowRight size={16} />
+            </WhatsappLink>
+          </div>
         </div>
       </div>
     </section>

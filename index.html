@@ -387,11 +387,17 @@
         </article>
 
         <div class="sheet-bottom">
-          <span>¿No sabés por dónde empezar?</span>
-          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20contarte%20qu%C3%A9%20le%20pasa%20a%20mi%20PC." target="_blank" rel="noopener noreferrer" class="inline-contact wa-cta" data-testid="link-whatsapp-services">
-            Contanos qué le pasa a tu PC
-            <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
+          <div class="sheet-bottom-mascot-note" aria-hidden="true">
+            <img src="./graficas/mascota_servicio_rapido.webp" alt="" class="quick-mascot-img" width="48" height="42" loading="lazy" />
+            <span>Servicio ágil en Rosario</span>
+          </div>
+          <div class="sheet-bottom-action">
+            <span>¿No sabés por dónde empezar?</span>
+            <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20contarte%20qu%C3%A9%20le%20pasa%20a%20mi%20PC." target="_blank" rel="noopener noreferrer" class="inline-contact wa-cta" data-testid="link-whatsapp-services">
+              Contanos qué le pasa a tu PC
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -403,6 +409,14 @@
           <div class="maintenance-ribbon" aria-hidden="true">EVITÁ QUE SE QUEMEN TUS COMPONENTES</div>
           <h2 class="display section-title" id="mantenimiento-title">¿Tu PC está lenta<br />o hace <em>mucho ruido?</em></h2>
           <p>El polvo y el calor son los peores enemigos del hardware. Una limpieza a fondo y el cambio de pasta térmica de alto rendimiento le devuelven la vida a tu equipo.</p>
+
+          <div class="maintenance-mascot-badge" aria-hidden="true">
+            <img src="./graficas/mascota_limpieza_polvo.webp" alt="Mascota quitando el polvo de los componentes" width="70" height="59" loading="lazy" />
+            <div class="badge-text">
+              <span class="badge-tag">CUIDADO DE HARDWARE</span>
+              <strong>Despeje de polvo y sopleteado seguro</strong>
+            </div>
+          </div>
 
           <ul class="maintenance-points">
             <li><span class="point-check">⚙</span>Limpieza profunda de polvo y pelusas</li>
@@ -501,23 +515,29 @@
         <div class="contact-main">
           <div>
             <div class="contact-bonified-badge" aria-label="Beneficio: Diagnóstico bonificado">
-              <span class="badge-star" aria-hidden="true">✦</span>
+              <img src="./graficas/mascota_diagnostico_lupa.webp" alt="" class="bonified-mascot-img" width="36" height="41" loading="lazy" aria-hidden="true" />
               <span><strong>DIAGNÓSTICO 100% BONIFICADO</strong> · Si reparás con nosotros, la revisión es gratis</span>
             </div>
             <h2 class="display" id="contacto-title">Contanos qué<br /><em>necesita tu PC.</em></h2>
             <p>Escribinos por WhatsApp o completá el formulario para recibir un diagnóstico claro y sin vueltas en Rosario.</p>
           </div>
 
-          <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20hacer%20una%20consulta%20sobre%20mi%20equipo." target="_blank" rel="noopener noreferrer" class="contact-button wa-cta" aria-label="Escribir por WhatsApp al 341 258 0840" data-testid="link-whatsapp-contact">
-            <span class="contact-icon" aria-hidden="true">
-              <svg width="24" height="24"><use href="#i-wa"/></svg>
-            </span>
-            <span class="contact-number">
-              <small>WHATSAPP</small>
-              <strong>341 258 0840</strong>
-            </span>
-            <svg class="contact-arrow" width="26" height="26" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
+          <div class="contact-cta-wrapper">
+            <div class="mascot-wa-pointer" aria-hidden="true">
+              <img src="./graficas/mascota_whatsapp_cta.webp" alt="" class="mascot-pointer-img" width="88" height="50" loading="lazy" />
+              <span class="pointer-bubble">¡Escribinos directo! 💬</span>
+            </div>
+            <a href="https://wa.me/5493412580840?text=Hola%20SZ%20Mantenimiento%20PC!%20Quiero%20hacer%20una%20consulta%20sobre%20mi%20equipo." target="_blank" rel="noopener noreferrer" class="contact-button wa-cta" aria-label="Escribir por WhatsApp al 341 258 0840" data-testid="link-whatsapp-contact">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24"><use href="#i-wa"/></svg>
+              </span>
+              <span class="contact-number">
+                <small>WHATSAPP</small>
+                <strong>341 258 0840</strong>
+              </span>
+              <svg class="contact-arrow" width="26" height="26" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
         </div>
 
         <!-- FORMULARIO DE CONSULTA RÁPIDA CON HONEYPOT SPAM PROTECTION -->
