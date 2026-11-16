@@ -34,10 +34,10 @@
 }
 
 .walk-strip-mascot-box img {
-  width: 96px;
-  height: 86px;
+  width: 104px;
+  height: auto;
   object-fit: contain;
-  filter: drop-shadow(2px 5px 8px rgba(0, 0, 0, 0.28));
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.22));
   transform-origin: center bottom;
   animation: rubber-hose-bop 3.2s ease-in-out infinite;
 }
