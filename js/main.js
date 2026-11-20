@@ -92,9 +92,11 @@
 
     var heroStamp = document.querySelector('.hero-stamp');
     var servicesStamp = document.querySelector('.services-stamp');
+    var warrantySeal = document.querySelector('.benefits-warranty-seal');
 
     if (heroStamp) stampObs.observe(heroStamp);
     if (servicesStamp) stampObs.observe(servicesStamp);
+    if (warrantySeal) stampObs.observe(warrantySeal);
   }
 
   /* ==========================================================
@@ -234,8 +236,11 @@
       var isTransitionToClean = (currentView === 'before' && view === 'after');
       currentView = view;
 
-      cleaningImg.src = data.src;
-      cleaningImg.alt = data.alt;
+      var hasDualLayers = Boolean(document.getElementById('cleaningImgAfter'));
+      if (!hasDualLayers) {
+        cleaningImg.src = data.src;
+        cleaningImg.alt = data.alt;
+      }
       if (badge) {
         badge.textContent = data.badge;
         badge.className = 'cleaning-badge ' + data.badgeClass;
@@ -610,14 +615,119 @@
       });
 
       if (feedback) {
-        feedback.textContent = '¡Excelente! Abriendo WhatsApp con tus datos...';
+        feedback.innerHTML =
+          '<img src="./graficas/mascota_pulgar_ok.webp" alt="" class="feedback-mascot" width="34" height="35" aria-hidden="true" />' +
+          '<span>¡Consulta lista! Abriendo WhatsApp con tus datos...</span>';
         feedback.className = 'form-feedback is-success';
       }
 
       setTimeout(function () {
         window.open(waUrl, '_blank', 'noopener,noreferrer');
         form.reset();
-      }, 400);
+      }, 450);
+    });
+  }
+
+  /* ==========================================================
+     10. ENTRADA ESCALONADA DE TARJETAS (BENEFICIOS Y RESEÑAS)
+     ========================================================== */
+  function initRevealCards(reduceMotion) {
+    var cards = document.querySelectorAll('.reveal-card');
+    if (!cards.length || !('IntersectionObserver' in window) || reduceMotion) return;
+
+    document.documentElement.classList.add('has-reveal-js');
+
+    // Asignar stagger limpio de 55ms por posición dentro de cada grilla
+    var grids = document.querySelectorAll('.benefits-grid, .reviews-grid');
+    grids.forEach(function (grid) {
+      var gridCards = grid.querySelectorAll('.reveal-card');
+      gridCards.forEach(function (card, idx) {
+        card.style.setProperty('--reveal-delay', (idx * 55) + 'ms');
+      });
+    });
+
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+    cards.forEach(function (card) {
+      revealObs.observe(card);
+    });
+  }
+
+  /* ==========================================================
+     11. ACORDEÓN SUAVE PARA FAQS (<details>)
+     ========================================================== */
+  function initSmoothFaqs(reduceMotion) {
+    if (reduceMotion) return;
+    var items = document.querySelectorAll('details.faq-item');
+    if (!items.length) return;
+
+    items.forEach(function (details) {
+      var summary = details.querySelector('summary');
+      var content = details.querySelector('.faq-answer');
+      if (!summary || !content || !details.animate) return;
+
+      var animation = null;
+      var isClosing = false;
+      var isExpanding = false;
+
+      summary.addEventListener('click', function (e) {
+        e.preventDefault();
+        details.style.overflow = 'hidden';
+
+        if (isClosing || !details.open) {
+          // Abrir con animación suave
+          details.style.height = details.offsetHeight + 'px';
+          details.open = true;
+
+          window.requestAnimationFrame(function () {
+            isExpanding = true;
+            var startHeight = details.offsetHeight + 'px';
+            var endHeight = (summary.offsetHeight + content.offsetHeight) + 'px';
+
+            if (animation) animation.cancel();
+            animation = details.animate(
+              { height: [startHeight, endHeight] },
+              { duration: 240, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
+            );
+
+            animation.onfinish = function () {
+              details.open = true;
+              animation = null;
+              isExpanding = false;
+              details.style.height = '';
+              details.style.overflow = '';
+            };
+            animation.oncancel = function () { isExpanding = false; };
+          });
+        } else if (isExpanding || details.open) {
+          // Cerrar con animación suave
+          isClosing = true;
+          var startHeight = details.offsetHeight + 'px';
+          var endHeight = summary.offsetHeight + 'px';
+
+          if (animation) animation.cancel();
+          animation = details.animate(
+            { height: [startHeight, endHeight] },
+            { duration: 210, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
+          );
+
+          animation.onfinish = function () {
+            details.open = false;
+            animation = null;
+            isClosing = false;
+            details.style.height = '';
+            details.style.overflow = '';
+          };
+          animation.oncancel = function () { isClosing = false; };
+        }
+      });
     });
   }
 
@@ -636,5 +746,7 @@
     initLegalModals();
     initAnalyticsAndTracking();
     initContactForm();
+    initRevealCards(reduceMotion);
+    initSmoothFaqs(reduceMotion);
   });
 })();

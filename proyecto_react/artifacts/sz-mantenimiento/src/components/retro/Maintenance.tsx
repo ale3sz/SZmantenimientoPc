@@ -185,12 +185,14 @@ export function Maintenance() {
             )}
             <span className={`clean-sparkle${isShining ? ' is-shining' : ''}`} aria-hidden="true">✦</span>
             <img
-              src={isAfter ? cleaningAfter : cleaningBefore}
-              alt={
-                isAfter
-                  ? 'La misma PC después de la limpieza: gabinete y componentes sin polvo'
-                  : 'Interior de una PC antes de la limpieza: polvo acumulado en gabinete, fuente y cables'
-              }
+              className="cleaning-layer-after"
+              src={cleaningAfter}
+              alt="La misma PC después de la limpieza: gabinete y componentes sin polvo"
+            />
+            <img
+              className="cleaning-layer-before"
+              src={cleaningBefore}
+              alt="Interior de una PC antes de la limpieza: polvo acumulado en gabinete, fuente y cables"
             />
             <span className={`cleaning-badge ${isAfter ? 'after-badge' : 'before-badge'}`} aria-live="polite">
               {isAfter ? 'Después · pasta térmica nueva y coolers limpios' : 'Antes · polvo acumulado y riesgo térmico'}

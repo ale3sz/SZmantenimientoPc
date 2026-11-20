@@ -509,13 +509,31 @@
 }
 
 .form-feedback.is-error {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: #ff9b91;
+  animation: feedback-pop 200ms var(--ease-out) both;
 }
 
 .form-feedback.is-success {
-  display: block;
-  color: #72e89f;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: rgba(25, 56, 32, 0.92);
+  border: 1.5px solid #72e89f;
+  border-radius: 8px;
+  color: #e2f8e6;
+  box-shadow: 3px 3px 0 var(--fr-ink);
+  animation: feedback-pop 240ms var(--ease-out) both;
+}
+
+.form-feedback .feedback-mascot {
+  width: 34px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
 }
 
 /* Mobile responsive adjustments */

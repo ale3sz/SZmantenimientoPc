@@ -113,10 +113,92 @@
   }
 }
 
+/* Animación elástica de dibujo animado años 30 (Rubber Hose Bop) */
+@keyframes rubber-hose-bop {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  28% {
+    transform: translateY(4px) scale(1.03, 0.96);
+  }
+  55% {
+    transform: translateY(-6px) scale(0.97, 1.04);
+  }
+  78% {
+    transform: translateY(2px) scale(1.01, 0.98);
+  }
+}
+
+/* Animación de destello titilante estilo cómic ✦ (composite-only: solo opacity + transform) */
+@keyframes spark-flicker {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.88) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25) rotate(45deg);
+  }
+}
+
+/* Pulso eléctrico sutil para nodos del circuito del Hero */
+@keyframes circuit-node-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+/* Giro ultra lento del anillo punteado de taller */
+@keyframes circuit-ring-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Entrada de confirmación de formulario (delight) */
+@keyframes feedback-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Entrada escalonada controlada por IntersectionObserver (progresiva: visible sin JS) */
+.has-reveal-js .reveal-card {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 320ms var(--ease-out), transform 320ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.has-reveal-js .reveal-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación de engranaje mecánico ⚙ */
+@keyframes gear-turn {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Reducción de movimiento para usuarios con sensibilidad vestibular */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .has-reveal-js .reveal-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
   .flyer-retro *,
   .flyer-retro *::before,

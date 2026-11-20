@@ -74,9 +74,34 @@
 }
 
 .flyer-retro a:focus-visible,
-.flyer-retro button:focus-visible {
+.flyer-retro button:focus-visible,
+.flyer-retro summary:focus-visible {
   outline: 3px solid var(--fr-red-bright);
   outline-offset: 3px;
+}
+
+/* Sensación nativa en móvil: respuesta táctil sin demora de 300ms ni selección accidental */
+.flyer-retro a,
+.flyer-retro button,
+.flyer-retro summary {
+  touch-action: manipulation;
+}
+
+.flyer-retro button,
+.flyer-retro .retro-button,
+.flyer-retro .contact-button,
+.flyer-retro .floating-whatsapp,
+.flyer-retro .cleaning-toggle-btn {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (pointer: coarse) {
+  .flyer-retro input,
+  .flyer-retro textarea,
+  .flyer-retro select {
+    font-size: 16px;
+  }
 }
 
 .display {

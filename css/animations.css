@@ -129,17 +129,59 @@
   }
 }
 
-/* Animación de destello titilante estilo cómic ✦ */
+/* Animación de destello titilante estilo cómic ✦ (composite-only: solo opacity + transform) */
 @keyframes spark-flicker {
   0%, 100% {
-    opacity: 0.35;
-    transform: scale(0.85) rotate(0deg);
+    opacity: 0.4;
+    transform: scale(0.88) rotate(0deg);
   }
   50% {
     opacity: 1;
-    transform: scale(1.3) rotate(45deg);
-    filter: drop-shadow(0 0 2px var(--fr-gold));
+    transform: scale(1.25) rotate(45deg);
   }
+}
+
+/* Pulso eléctrico sutil para nodos del circuito del Hero */
+@keyframes circuit-node-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+/* Giro ultra lento del anillo punteado de taller */
+@keyframes circuit-ring-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Entrada de confirmación de formulario (delight) */
+@keyframes feedback-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Entrada escalonada controlada por IntersectionObserver (progresiva: visible sin JS) */
+.has-reveal-js .reveal-card {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 320ms var(--ease-out), transform 320ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.has-reveal-js .reveal-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Animación de engranaje mecánico ⚙ */
@@ -152,6 +194,11 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .has-reveal-js .reveal-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
   .flyer-retro *,
   .flyer-retro *::before,

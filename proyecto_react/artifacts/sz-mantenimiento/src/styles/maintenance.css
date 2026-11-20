@@ -158,13 +158,15 @@
   transition: background var(--snap), color var(--snap), border-color var(--snap), transform var(--snap), box-shadow var(--snap);
 }
 
-.flyer-retro .cleaning-toggle-btn:hover {
-  color: #fff;
-  border-color: var(--fr-cream-ink);
+@media (hover: hover) and (pointer: fine) {
+  .flyer-retro .cleaning-toggle-btn:hover {
+    color: #fff;
+    border-color: var(--fr-cream-ink);
+  }
 }
 
 .flyer-retro .cleaning-toggle-btn:active {
-  transform: translate(2px, 2px);
+  transform: scale(0.98) translate(2px, 2px);
   box-shadow: 0 0 0 var(--fr-ink);
 }
 
@@ -284,10 +286,26 @@
 }
 
 .flyer-retro .cleaning-img-container img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: contrast(1.15) brightness(1.2);
+}
+
+.flyer-retro .cleaning-img-container .cleaning-layer-after {
+  z-index: 1;
+}
+
+.flyer-retro .cleaning-img-container .cleaning-layer-before {
+  z-index: 2;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 440ms var(--ease-out);
+}
+
+.flyer-retro .cleaning-img-container:not(.is-dusty) .cleaning-layer-before {
+  clip-path: inset(0 0 0 100%);
 }
 
 .flyer-retro .cleaning-badge {
@@ -295,12 +313,14 @@
   bottom: 12px;
   left: 12px;
   right: 12px;
+  z-index: 5;
   padding: 10px 14px;
   font: 600 13px/1.35 var(--font-label);
   letter-spacing: .08em;
   text-transform: uppercase;
   text-align: center;
   border-radius: 6px;
+  transition: background-color 260ms var(--ease-out), color 260ms var(--ease-out);
 }
 
 .flyer-retro .cleaning-badge.before-badge {

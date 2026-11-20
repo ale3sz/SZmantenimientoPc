@@ -4,7 +4,7 @@
 
 .flyer-retro .retro-hero {
   background: var(--fr-night);
-  padding: 98px 28px 36px;
+  padding: 72px 24px 20px;
   color: var(--fr-paper-light);
   position: relative;
   border-bottom: 4px solid var(--fr-red);
@@ -39,7 +39,7 @@
 }
 
 .flyer-retro .hero-topline {
-  padding: 12px 6px 14px;
+  padding: 8px 6px 10px;
   border-top: 2px solid var(--fr-cream-ink);
   border-bottom: 1px solid rgba(233,223,200,.32);
 }
@@ -50,79 +50,113 @@
 
 .flyer-retro .hero-content {
   display: grid;
-  grid-template-columns: 1.08fr .92fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-height: 530px;
+  justify-content: center;
+  gap: 32px;
+  min-height: 450px;
   position: relative;
 }
 
 .flyer-retro .hero-copy {
   position: relative;
   z-index: 2;
-  padding: 40px 0 44px;
+  padding: 12px 0 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flyer-retro .hero-stamp {
   position: absolute;
-  right: 4%;
-  top: 32px;
-  padding: 9px 14px;
+  right: 20px;
+  top: -18px;
+  padding: 5px 11px;
   border: 2px solid var(--fr-red-bright);
   border-radius: 6px;
   color: var(--fr-red-bright);
-  font: 600 12px/1.25 var(--font-label);
+  background: rgba(20, 19, 17, 0.94);
+  font: 600 11px/1.2 var(--font-label);
   letter-spacing: .12em;
   text-align: center;
-  transform: rotate(8deg);
+  transform: rotate(5deg);
   transform-origin: center center;
+  box-shadow: 2px 2px 0 var(--fr-ink);
+  z-index: 5;
 }
 
 .flyer-retro .hero-stamp.is-stamped {
   animation: stamp-impact 0.45s var(--ease-out) both;
 }
 
-.flyer-retro .hero-copy h1 {
-  max-width: 640px;
-  margin: 0;
-  font-size: clamp(64px, 8.2vw, 108px);
-  line-height: .9;
-  color: var(--fr-cream-ink);
-  text-shadow: 4px 4px 0 var(--fr-red-deep);
+.flyer-retro .hero-copy h1,
+.flyer-retro .hero-copy h1 * {
+  color: var(--fr-cream-ink) !important;
+  text-shadow: 4px 4px 0 var(--fr-red-deep) !important;
 }
 
-.flyer-retro .hero-copy h1 span {
-  color: var(--fr-red-bright);
-  text-shadow: 4px 4px 0 #0c0b09;
+.flyer-retro .hero-copy h1 {
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(38px, 4.4vw, 68px);
+  line-height: .92;
+  letter-spacing: .01em;
+}
+
+.flyer-retro .hero-copy h1 .h1-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .flyer-retro .hero-subbanner {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin: 22px 0 0;
-  padding: 6px 14px;
+  margin: 16px 0 0;
+  padding: 5px 12px;
   background: var(--fr-slate);
   color: var(--fr-cream-ink);
   border: 1.5px solid var(--fr-cream-ink);
   border-radius: 6px;
-  font: 600 12px var(--font-label);
+  font: 600 11.5px var(--font-label);
   letter-spacing: .14em;
   text-transform: uppercase;
+  width: fit-content;
 }
 
 .flyer-retro .hero-intro {
-  max-width: 440px;
+  max-width: 480px;
   color: #dfd3b8;
-  font-size: 18px;
-  line-height: 1.55;
-  margin: 18px 0 28px;
+  font-size: 16.5px;
+  line-height: 1.48;
+  margin: 14px 0 20px;
 }
 
 .flyer-retro .hero-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
+}
+
+.flyer-retro .hero-zero-risk {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--fr-muted-dark);
+  font-size: 13.5px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.flyer-retro .hero-zero-risk svg {
+  color: var(--fr-gold);
+  flex-shrink: 0;
+}
+
+.flyer-retro .hero-zero-risk strong {
+  color: var(--fr-paper-light);
 }
 
 /* BOTONES ESTILO BANDERÍN Y BARRAS REDONDEADAS DE IMPRENTA VINTAGE */
@@ -248,6 +282,7 @@
   position: relative;
   display: grid;
   place-items: center;
+  transform: translateY(-50px);
 }
 
 .flyer-retro .circuit-backdrop {
@@ -258,9 +293,24 @@
   pointer-events: none;
 }
 
+.flyer-retro .circuit-backdrop > circle:first-child {
+  transform-origin: 200px 200px;
+  animation: circuit-ring-spin 65s linear infinite;
+}
+
+.flyer-retro .circuit-backdrop > circle:not(:first-child) {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: circuit-node-pulse 3.4s ease-in-out infinite;
+}
+
+.flyer-retro .circuit-backdrop > circle:nth-of-type(3) { animation-delay: 0.85s; }
+.flyer-retro .circuit-backdrop > circle:nth-of-type(4) { animation-delay: 1.7s; }
+.flyer-retro .circuit-backdrop > circle:nth-of-type(5) { animation-delay: 2.55s; }
+
 .flyer-retro .mascot-frame {
   z-index: 1;
-  width: min(355px, 78%);
+  width: min(375px, 82%);
   aspect-ratio: 1;
   padding: 8px;
   border: 3px solid var(--fr-cream-ink);
